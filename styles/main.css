@@ -266,6 +266,10 @@ svg * {
   --transition-duration: 0.2s;
 }
 
+html.is-lock {
+  overflow: hidden;
+}
+
 body {
   font-size: clamp(0.875rem, 0.8112745098rem + 0.2614379085vw, 1.125rem);
   font-family: var(--font-family-base);
@@ -329,6 +333,7 @@ svg * {
 }
 
 a {
+  font-weight: 500;
   color: inherit;
 }
 @media (any-hover: hover) {
@@ -349,21 +354,6 @@ a[class] {
   outline: 0.125rem solid var(--color-light);
   outline-offset: 0.1875rem;
   transition-duration: 0s !important;
-}
-
-a[aria-label],
-button[aria-label] {
-  position: relative;
-}
-a[aria-label]::after,
-button[aria-label]::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  width: 2.75rem;
-  height: 2.75rem;
-  content: "";
 }
 
 .container {
@@ -395,6 +385,161 @@ button[aria-label]::after {
   .visible-mobile {
     display: none !important;
   }
+}
+
+.burger-button {
+  width: 2.125rem;
+  height: 2.125rem;
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.53125rem 0.265625rem;
+  background-color: transparent;
+  border: none;
+}
+@media (any-hover: hover) {
+  .burger-button:hover::after {
+    border-color: var(--color-accent-80);
+  }
+}
+@media (any-hover: none) {
+  .burger-button::active::after {
+    border-color: var(--color-accent-80);
+  }
+}
+.burger-button::after {
+  width: 2.875rem;
+  height: 2.875rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  content: "";
+  background-color: var(--color-grey-15);
+  border: 0.0625rem solid transparent;
+  border-radius: var(--border-radius-small);
+  transition-duration: var(--transition-duration);
+}
+.burger-button__line {
+  z-index: 1;
+  width: 100%;
+  height: 0.125rem;
+  background-color: var(--color-accent-80);
+  border-radius: var(--border-radius);
+}
+.burger-button__line:last-child {
+  align-self: end;
+  width: 58%;
+}
+.burger-button.is-active .burger-button__line:first-child {
+  rotate: 45deg;
+  transform-origin: 0;
+  translate: 0.25em -0.1em;
+}
+.burger-button.is-active .burger-button__line:nth-child(2) {
+  rotate: -45deg;
+}
+.burger-button.is-active .burger-button__line:last-child {
+  width: 0;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  padding-inline: 1.5rem;
+  height: 3.6875rem;
+  white-space: nowrap;
+  color: var(--color-grey-15);
+  background-color: var(--color-accent);
+  border-radius: var(--border-radius-small);
+  border: 1px solid var(--color-accent);
+}
+@media (any-hover: hover) {
+  .button:hover {
+    background-color: transparent;
+  }
+}
+@media (any-hover: none) {
+  .button::active {
+    background-color: transparent;
+  }
+}
+@media (width <= 90.06125rem) {
+  .button {
+    padding-inline: 1.125rem;
+    height: 2.8125rem;
+  }
+}
+
+@media (width <= 90.06125rem) {
+  .logo__image {
+    max-width: 7.375rem;
+  }
+}
+
+.header {
+  border-bottom: var(--border);
+}
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1.25rem;
+}
+@media (width <= 47.99875rem) {
+  .header__inner {
+    padding-top: 2.5rem;
+  }
+}
+@media (width > 47.99875rem) {
+  .header__overlay {
+    display: contents;
+  }
+}
+@media (width <= 47.99875rem) {
+  .header__overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.9375rem;
+    background-color: var(--color-grey-10);
+    transition-duration: var(--transition-duration);
+  }
+  .header__overlay:not(.is-active) {
+    opacity: 0;
+    visibility: hidden;
+    translate: 100%;
+  }
+}
+.header__menu-list {
+  display: flex;
+  column-gap: 0.125rem;
+}
+@media (width <= 47.99875rem) {
+  .header__menu-list {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.9375rem;
+  }
+}
+.header__menu-link {
+  padding: 0.875rem 1.75rem;
+}
+@media (width <= 90.06125rem) {
+  .header__menu-link {
+    padding: 0.75rem 1.375rem;
+  }
+}
+.header__menu-link.is-active {
+  font-weight: 600;
+  color: var(--color-light);
+  background-color: var(--color-grey-15);
+  border-radius: var(--border-radius-small);
+  pointer-events: none;
 }
 
 /*# sourceMappingURL=main.css.map */

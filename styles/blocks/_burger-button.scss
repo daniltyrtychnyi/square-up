@@ -1,0 +1,61 @@
+@use '../helpers' as *;
+
+.burger-button {
+    @include square(rem(34));
+
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: rem(8.5) rem(4.25);
+    background-color: transparent;
+    border: none;
+
+    @include hover {
+        &::after {
+            border-color: var(--color-accent-80);
+        }
+    }
+
+    &::after {
+        @include square(rem(46));
+        @include abs-center;
+
+        content: '';
+        background-color: var(--color-grey-15);
+        border: rem(1) solid transparent;
+        border-radius: var(--border-radius-small);
+        transition-duration: var(--transition-duration);
+    }
+
+    &__line {
+        z-index: 1;
+        width: 100%;
+        height: rem(2);
+        background-color: var(--color-accent-80);
+        border-radius: var(--border-radius);
+
+        &:last-child {
+            align-self: end;
+            width: 58%;
+        }
+    }
+
+    &.is-active {
+        .burger-button__line {
+            &:first-child {
+                rotate: 45deg;
+                transform-origin: 0;
+                translate: 0.25em -0.1em;
+            }
+
+            &:nth-child(2) {
+                rotate: -45deg;
+            }
+
+            &:last-child {
+                width: 0;
+            }
+        }
+    }
+}

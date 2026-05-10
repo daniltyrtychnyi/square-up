@@ -1,0 +1,22 @@
+@use '../helpers' as *;
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    padding-inline: rem(24);
+    height: rem(59);
+    white-space: nowrap;
+    color: var(--color-grey-15);
+    background-color: var(--color-accent);
+    border-radius: var(--border-radius-small);
+    border: 1px solid var(--color-accent);
+
+    @include hover {
+        background-color: transparent;
+    }
+
+    @include laptop {
+        padding-inline: rem(18);
+        height: rem(45);
+    }
+}

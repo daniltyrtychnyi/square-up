@@ -1,5 +1,11 @@
 @use './helpers' as *;
 
+html {
+    &.is-lock {
+        overflow: hidden;
+    }
+}
+
 body {
     @include fluid-text(18, 14);
 
@@ -63,6 +69,7 @@ svg * {
 }
 
 a {
+    font-weight: 500;
     color: inherit;
 
     @include hover {
@@ -80,16 +87,16 @@ a {
     transition-duration: 0s !important;
 }
 
-a,
-button {
-    &[aria-label] {
-        position: relative;
+// a,
+// button {
+//     &[aria-label] {
+//         position: relative;
 
-        &::after {
-            @include abs-center;
-            @include square(rem(44));
+//         &::after {
+//             @include abs-center;
+//             @include square(rem(46));
 
-            content: '';
-        }
-    }
-}
+//             content: '';
+//         }
+//     }
+// }

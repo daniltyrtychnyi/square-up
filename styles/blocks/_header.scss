@@ -1,0 +1,69 @@
+@use '../helpers' as *;
+
+.header {
+    border-bottom: var(--border);
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-block: rem(20);
+
+        @include mobile {
+            padding-top: rem(40);
+        }
+    }
+
+    &__overlay {
+        @include mobile-above {
+            display: contents;
+        }
+
+        @include mobile {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: rem(15);
+            background-color: var(--color-grey-10);
+            transition-duration: var(--transition-duration);
+
+            &:not(.is-active) {
+                @include hide;
+
+                translate: 100%;
+            }
+        }
+    }
+
+    &__menu {
+        &-list {
+            display: flex;
+            column-gap: rem(2);
+
+            @include mobile {
+                flex-direction: column;
+                align-items: center;
+                row-gap: rem(15);
+            }
+        }
+
+        &-link {
+            padding: rem(14) rem(28);
+
+            @include laptop {
+                padding: rem(12) rem(22);
+            }
+
+            &.is-active {
+                font-weight: 600;
+                color: var(--color-light);
+                background-color: var(--color-grey-15);
+                border-radius: var(--border-radius-small);
+                pointer-events: none;
+            }
+        }
+    }
+}
