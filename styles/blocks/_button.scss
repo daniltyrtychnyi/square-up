@@ -1,8 +1,8 @@
 @use '../helpers' as *;
 
 .button {
-    display: inline-flex;
-    align-items: center;
+    @include flex-center(true);
+
     padding-inline: rem(24);
     height: rem(59);
     white-space: nowrap;
@@ -18,5 +18,10 @@
     @include laptop {
         padding-inline: rem(18);
         height: rem(45);
+        align-self: center;
+    }
+
+    @include tablet {
+        padding-inline: rem(15);
     }
 }

@@ -446,6 +446,7 @@ a[class] {
 
 .button {
   display: inline-flex;
+  justify-content: center;
   align-items: center;
   padding-inline: 1.5rem;
   height: 3.6875rem;
@@ -469,6 +470,12 @@ a[class] {
   .button {
     padding-inline: 1.125rem;
     height: 2.8125rem;
+    align-self: center;
+  }
+}
+@media (width <= 63.99875rem) {
+  .button {
+    padding-inline: 0.9375rem;
   }
 }
 
@@ -479,12 +486,26 @@ a[class] {
 }
 
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-grey-10);
   border-bottom: var(--border);
+  animation-name: scrolling-header;
+  animation-fill-mode: both;
+  animation-timeline: scroll(y);
+  animation-range: 4.375rem 9.375rem;
+}
+@keyframes scrolling-header {
+  to {
+    box-shadow: 0 0 1rem var(--color-light);
+  }
 }
 .header__inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  column-gap: 0.625rem;
   padding-block: 1.25rem;
 }
 @media (width <= 47.99875rem) {
@@ -504,8 +525,8 @@ a[class] {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    row-gap: 0.9375rem;
+    row-gap: 3rem;
+    padding: 1.25rem 0.3125rem;
     background-color: var(--color-grey-10);
     transition-duration: var(--transition-duration);
   }
@@ -513,6 +534,11 @@ a[class] {
     opacity: 0;
     visibility: hidden;
     translate: 100%;
+  }
+}
+@media (width <= 47.99875rem) {
+  .header__menu {
+    overflow-y: auto;
   }
 }
 .header__menu-list {
@@ -523,7 +549,7 @@ a[class] {
   .header__menu-list {
     flex-direction: column;
     align-items: center;
-    row-gap: 0.9375rem;
+    row-gap: 1rem;
   }
 }
 .header__menu-link {
@@ -534,12 +560,24 @@ a[class] {
     padding: 0.75rem 1.375rem;
   }
 }
+@media (width <= 63.99875rem) {
+  .header__menu-link {
+    padding: 0.5rem 1.125rem;
+  }
+}
 .header__menu-link.is-active {
   font-weight: 600;
   color: var(--color-light);
   background-color: var(--color-grey-15);
   border-radius: var(--border-radius-small);
   pointer-events: none;
+}
+@media (width <= 47.99875rem) {
+  .header__contact-us-link {
+    width: 100%;
+    max-width: 20rem;
+    align-self: center;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
