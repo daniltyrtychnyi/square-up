@@ -1,0 +1,33 @@
+@use './helpers' as *;
+
+:root {
+    --color-light: #FFFFFF;
+    --color-dark: #000000;
+    --color-accent: #9EFF00;
+    --color-accent-70: #C5FF66;
+    --color-accent-80: #D8FF99;
+    --color-grey-10: #191919;
+    --color-grey-15: #262626;
+    --color-grey-40: #656567;
+    --color-grey-60: #98989A;
+    --color-grey-90: #E6E6E6;
+
+    --font-family-base: 'Barlow', sans-serif;
+
+    --border: #{rem(1)} solid var(--color-grey-15);
+    --border-radius: #{rem(10)};
+    --border-radius-small: #{rem(8)};
+
+    @include laptop {
+        --border-radius: #{rem(8)};
+        --border-radius-small: #{rem(6)};
+    }
+
+    --gradient: linear-gradient(180deg, #242424 0%, rgba(36, 36, 36, 0) 100%), 
+                linear-gradient(229deg, rgba(158, 255, 0, 0.2) 22.41%, rgba(158, 255, 0, 0.2) 68.71%);
+
+    --container-width: #{rem(1600)};
+    --container-padding-x: #{rem(16)};
+
+    --transition-duration: 0.2s;
+}
