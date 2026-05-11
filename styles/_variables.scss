@@ -25,6 +25,9 @@
 
     --gradient: linear-gradient(180deg, #242424 0%, rgba(36, 36, 36, 0) 100%), 
                 linear-gradient(229deg, rgba(158, 255, 0, 0.2) 22.41%, rgba(158, 255, 0, 0.2) 68.71%);
+    --backdrop-filter:  blur(#{rem(12)});
+    --background: rgba(36, 36, 36, 0.2);;
+    
 
     --container-width: #{rem(1600)};
     --container-padding-x: #{rem(16)};

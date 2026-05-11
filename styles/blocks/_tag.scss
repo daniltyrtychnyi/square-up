@@ -1,0 +1,19 @@
+@use '../helpers' as *;
+
+.tag {
+    @include laptop {
+        padding: rem(8) rem(10);
+    }
+
+    @include mobile-above {
+        padding: rem(12) rem(14);
+        text-transform: capitalize;
+        color: var(--color-light);
+        background-color: var(--color-grey-15);
+        border-radius: var(--border-radius-small);
+    }
+
+    @include mobile {
+        padding: 0;
+    }
+}

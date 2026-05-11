@@ -1,0 +1,79 @@
+@use '../helpers' as *;
+
+.hero {
+    &__main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: rem(112);
+        padding-bottom: rem(274);
+        background: url('../../images/hero-bg-optimized.webp') center/cover no-repeat;
+
+        @include mobile-above {
+            border-inline: var(--border);
+        }
+    }
+
+    &__title {
+        text-align: center;
+
+        &:not(:last-child) {
+            margin-bottom: rem(40);
+
+            @include laptop {
+                margin-bottom: rem(30);
+            }
+        }
+    }
+
+    &__tags {
+        padding: rem(24) rem(40);
+        text-align: center;
+        background: var(--background);
+        backdrop-filter: var(--backdrop-filter);
+        border: var(--border);
+        border-radius: rem(12);
+
+        @include laptop {
+            padding: rem(18) rem(30);
+        }
+
+        @include mobile {
+            padding-inline: rem(20);
+        }
+
+        &-text {
+            @include fluid-text(22, 16);
+
+            color: var(--color-grey-60);
+        }
+
+        &:not(:last-child) {
+            margin-bottom: rem(50);
+
+            @include laptop {
+                margin-bottom: rem(40);
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        column-gap: rem(13);
+    }
+
+    &__partners {
+        &-label {
+            padding: rem(24) rem(34);
+            font-weight: 500;
+            color: var(--color-light);
+            background-color: var(--color-grey-10);
+            border: var(--border);
+            border-radius: rem(100);
+        }
+
+        &-list {
+            padding-block: rem(40);
+        }
+    }
+}
