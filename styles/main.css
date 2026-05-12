@@ -636,7 +636,7 @@ a[class] {
   z-index: -1;
   width: 100%;
   height: 100%;
-  background: url("../../images/hero-bg.webp") center/cover no-repeat;
+  background: url("../images/hero-bg.webp") center/cover no-repeat;
 }
 @media (width <= 30.06125rem) {
   .hero__main::before {
@@ -652,7 +652,7 @@ a[class] {
   z-index: -1;
   width: 100%;
   height: 100%;
-  background: url("../../images/hero-bg-abstract.webp") center/cover no-repeat;
+  background: url("../images/hero-bg-abstract.webp") center/cover no-repeat;
 }
 .hero__title {
   text-align: center;
