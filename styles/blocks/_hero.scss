@@ -16,7 +16,6 @@
         @include mobile {
             padding-top: rem(80);
             padding-bottom: rem(205);
-            
         }
 
         &::before,
@@ -117,6 +116,7 @@
             display: grid;
             grid-template-columns: repeat(6, 1fr);
             column-gap: rem(10);
+            border-bottom: var(--border);
 
             @include laptop {
                 padding-block: rem(30);
@@ -133,16 +133,20 @@
         &-item {
             display: flex;
             justify-content: center;
-            padding: rem(30) rem(40);
+            padding-block: rem(20);
+
+            @include laptop {
+                padding-block: rem(16);
+            }
+
+            @include tablet {
+                border-bottom: var(--border);
+            }
 
             &:nth-child(odd) {
                 @include tablet {
                     border-right: var(--border);
                 }
-            }
-
-            @include tablet {
-                border-bottom: var(--border);
             }
         }
 

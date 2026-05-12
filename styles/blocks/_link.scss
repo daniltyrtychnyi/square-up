@@ -1,0 +1,21 @@
+@use '../helpers' as *;
+
+.link {
+    @include flex-center;
+
+    padding-block: rem(18);
+    width: 100%;
+    max-width: fluid(432, 298);
+    background-color: var(--color-grey-15);
+    border-radius: var(--border-radius-small);
+    border: 1px solid transparent;
+
+    @include hover {
+        background-color: transparent;
+        border-color: var(--color-accent);
+    }
+
+    @include laptop {
+        padding-block: rem(14);
+    }
+}

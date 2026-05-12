@@ -1,0 +1,10 @@
+@use '../helpers' as *;
+
+.icon {
+    &__image {
+        --iconImageSize: #{fluid(40, 26)};
+
+        @include abs-center;
+        @include square(var(--iconImageSize));
+    }
+}

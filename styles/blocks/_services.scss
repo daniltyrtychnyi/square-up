@@ -1,0 +1,15 @@
+@use '../helpers' as *;
+
+.services {
+    &__item {
+        &:not(:last-child) {
+            @include tablet-above {
+                border-right: var(--border);
+            }
+
+            @include tablet {
+                border-bottom: var(--border);
+            }
+        }
+    }
+}

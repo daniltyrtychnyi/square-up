@@ -1,0 +1,19 @@
+@use '../helpers' as *;
+
+.section {
+    &__header {
+        text-align: center;
+        padding-block: fluid(120, 50);
+        background: url('../../images/services/services-bg.svg') top/cover no-repeat;
+    }
+
+    &__title {
+        &:not(:last-child) {
+            margin-bottom: fluid(14, 6);
+        }
+    }
+
+    &__body {
+        border-inline: var(--border);
+    }
+}
