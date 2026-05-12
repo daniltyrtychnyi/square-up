@@ -9,7 +9,7 @@
     animation-name: scrolling-header;
     animation-fill-mode: both;
     animation-timeline: scroll(y);
-    animation-range: rem(70) rem(150);
+    animation-range: rem(100) rem(200);
 
     @keyframes scrolling-header {
         to {
