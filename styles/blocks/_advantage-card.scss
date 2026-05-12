@@ -1,0 +1,31 @@
+@use '../helpers' as *;
+
+.advantage-card {
+    &__main {
+        padding: rem(80);
+        border: var(--border);
+
+        @include laptop {
+            padding: rem(60);
+        }
+
+        @include mobile {
+            padding-block: rem(40);
+            padding-inline: rem(30);
+        }
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        column-gap: rem(20);
+
+        @include laptop {
+            column-gap: rem(14);
+        }
+
+        &:not(:last-child) {
+            margin-bottom: fluid(40, 24);
+        }
+    }
+}

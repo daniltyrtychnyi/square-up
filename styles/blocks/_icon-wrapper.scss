@@ -1,0 +1,19 @@
+@use '../helpers' as *;
+
+.icon-wrapper {
+    --iconWrapperSize: #{fluid(88, 58)};
+
+    @include square(var(--iconWrapperSize));
+
+    position: relative;
+    padding: fluid(24, 16);
+    background: var(--gradient);
+    border-radius: var(--border-radius);
+
+    &__image {
+        --iconImageSize: #{fluid(40, 26)};
+
+        @include abs-center;
+        @include square(var(--iconImageSize));
+    }
+}

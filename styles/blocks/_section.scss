@@ -4,7 +4,11 @@
     &__header {
         text-align: center;
         padding-block: fluid(120, 50);
-        background: url('../images/services/services-bg.svg') top/cover no-repeat;
+        background: url('../images/section-header_bg/services.svg') top/cover no-repeat;
+
+        &--advantages {
+            background: url('../images/section-header_bg/advantages.svg') top/cover no-repeat;
+        }
     }
 
     &__title {
