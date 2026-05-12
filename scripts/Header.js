@@ -10,6 +10,10 @@ class Header {
         isLock: 'is-lock',
     }
 
+    stateAttributes = {
+        ariaExpanded: 'aria-expanded',
+    }
+
     constructor() {
         this.rootElement = document.querySelector(this.selectors.root)
         this.overlayElement = this.rootElement.querySelector(this.selectors.overlay)
@@ -25,6 +29,9 @@ class Header {
         this.overlayElement.classList.toggle(this.stateClasses.isActive)
         this.burgerButtonElement.classList.toggle(this.stateClasses.isActive)
         document.documentElement.classList.toggle(this.stateClasses.isLock)
+
+        const isOpen = this.overlayElement.classList.contains(this.stateClasses.isActive)
+        this.burgerButtonElement.setAttribute(this.stateAttributes.ariaExpanded, isOpen)
     }
 }
 
