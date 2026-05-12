@@ -116,7 +116,6 @@
             display: grid;
             grid-template-columns: repeat(6, 1fr);
             column-gap: rem(10);
-            border-bottom: var(--border);
 
             @include laptop {
                 padding-block: rem(30);

@@ -751,7 +751,6 @@ a[aria-label]::after {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   column-gap: 0.625rem;
-  border-bottom: var(--border);
 }
 @media (width <= 90.06125rem) {
   .hero__partners-list {
