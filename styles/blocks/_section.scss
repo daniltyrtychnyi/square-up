@@ -6,8 +6,16 @@
         padding-block: fluid(120, 50);
         background: url('../images/section-header_bg/services.svg') top/cover no-repeat;
 
+        @include mobile-s {
+            padding-inline: rem(16);
+        }
+        
         &--advantages {
             background: url('../images/section-header_bg/advantages.svg') top/cover no-repeat;
+        }
+
+        &--about-us {
+            background: url('../images/section-header_bg/about-us.svg') top/cover no-repeat;
         }
     }
 

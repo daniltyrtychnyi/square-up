@@ -1,0 +1,71 @@
+@use '../helpers' as *;
+
+.review-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: fluid(40, 24);
+    padding: fluid(100, 40) fluid(80, 24);
+    height: 100%;
+    border: var(--border);
+
+    &__title,
+    &__name {
+        font-weight: 500;
+    }
+
+    &__title {
+        @include fluid-text(28, 18);
+
+        color: var(--color-accent-80);
+
+        &:not(:last-child) {
+            margin-bottom: rem(24);
+
+            @include laptop {
+                margin-bottom: rem(20);
+            }
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        padding: rem(20);
+        border: var(--border);
+        border-radius: var(--border-radius-small);
+
+        @include laptop {
+            padding: rem(14);
+        }
+    }
+
+    &__image {
+        max-width: fluid(60, 40);        
+        border-radius: fluid(8, 4);
+
+        &:not(:last-child) {
+            margin-right: fluid(18, 10);
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    &__name,
+    &__post {
+        font-style: normal;
+    }
+
+    &__name {
+        color: var(--color-light);
+    }
+
+    &__link {
+        margin-left: auto;
+        background-color: var(--color-grey-15);
+    }
+}

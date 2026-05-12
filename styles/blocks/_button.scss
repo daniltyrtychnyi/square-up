@@ -16,13 +16,6 @@
         border-color: var(--color-accent);
     }
 
-    &--dark {
-        color: var(--color-light);
-        background: var(--background);
-        backdrop-filter: var(--backdrop-filter);
-        border: rem(1) solid var(--color-grey-15);
-    }
-
     @include laptop {
         padding-inline: rem(18);
         height: rem(45);
@@ -31,5 +24,17 @@
 
     @include tablet {
         padding-inline: rem(15);
+    }
+
+    &--dark {
+        color: var(--color-light);
+        background: var(--background);
+        backdrop-filter: var(--backdrop-filter);
+        border: rem(1) solid var(--color-grey-15);
+    }
+
+    &--short {
+        height: rem(63);
+        padding-inline: rem(20);
     }
 }
