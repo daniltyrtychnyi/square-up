@@ -25,7 +25,6 @@
         background-color: var(--color-grey-15);
         border: rem(1) solid transparent;
         border-radius: var(--border-radius-small);
-        transition-duration: var(--transition-duration);
     }
 
     &__line {
@@ -34,6 +33,7 @@
         height: rem(2);
         background-color: var(--color-accent-80);
         border-radius: var(--border-radius);
+        transition-duration: var(--transition-duration);
 
         &:last-child {
             align-self: end;
