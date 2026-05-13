@@ -1,11 +1,10 @@
 @use '../helpers' as *;
 
 .icon-wrapper {
-    --iconWrapperSize: #{fluid(88, 58)};
-
-    @include square(var(--iconWrapperSize));
+    @include square(var(--icon-wrapper-size));
 
     position: relative;
+    flex-shrink: 0;
     padding: fluid(24, 16);
     background: var(--gradient);
     border-radius: var(--border-radius);

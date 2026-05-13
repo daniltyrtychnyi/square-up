@@ -1,0 +1,159 @@
+@use '../helpers' as *;
+
+.faq {
+    --faqAccordionHeaderColumnGap: #{fluid(30, 20)};
+
+    position: relative;
+    padding-block: rem(80);
+
+    @include laptop {
+        padding-block: rem(60);
+    }
+
+    @include tablet-above {
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            bottom: 0;
+            translate: -50%;
+            border-left: var(--border);
+        }
+    }
+
+    @include tablet {
+        padding-block: 0;
+    }
+
+    &__list {
+        column-count: 2;
+        column-gap: 0;
+        counter-reset: custom-counter;
+        list-style: none;
+
+        @include tablet {
+            column-count: 1;
+        }
+    }
+
+    &__item {
+        --counterContent: counter(custom-counter);
+
+        break-inside: avoid;
+        counter-increment: custom-counter;
+        border: var(--border);
+
+        &:nth-child(-n + 9) {
+            --counterContent: '0' counter(custom-counter);
+        }
+    }
+
+    &__accordion {
+        padding: rem(30) rem(50);
+        user-select: none;
+
+        @include laptop {
+            padding: rem(24) rem(40);
+        }
+
+        @include tablet {
+            padding-inline: rem(24);
+        }
+
+        &[open] {
+            .faq__accordion-header {
+                color: var(--color-accent-70);
+
+                @include mobile {
+                    margin-bottom: rem(24);
+                }
+            }
+
+            .faq__accordion-indicator::before,
+            .faq__accordion-indicator::after {
+                background-color: var(--color-accent-70);
+            }
+
+            .faq__accordion-indicator::before {
+                rotate: -45deg;
+            }
+
+            .faq__accordion-indicator::after {
+                rotate: 45deg;
+            }
+        }
+
+        &-header {
+            display: flex;
+            align-items: center;
+            column-gap: var(--faqAccordionHeaderColumnGap);
+
+            @include tablet {
+                margin-bottom: rem(24);
+            }
+        }
+
+        &-icon {
+            @include tablet {
+                padding: rem(14);
+            }
+
+            &::before {
+                @include abs-center;
+                @include fluid-text(28, 20);
+
+                content: var(--counterContent);
+                font-weight: 600;
+            }
+        }
+
+        &-title {
+            @include fluid-text(22, 16);
+
+            font-weight: 500;
+        }
+
+        &-indicator {
+            --faqIndicatorSize: #{rem(34)};
+
+            @include square(var(--faqIndicatorSize));
+
+            position: relative;
+            margin-left: auto;
+
+            @include laptop {
+                --faqIndicatorSize: #{rem(26)};
+            }
+
+            &::before,
+            &::after {
+                @include abs-center;
+
+                content: '';
+                width: rem(17);
+                height: rem(2);
+                margin-left: auto;
+                background-color: var(--color-light);
+                border-radius: var(--border-radius);
+                transition-duration: var(--transition-duration);
+
+                @include laptop {
+                    width: rem(13);
+                }
+            }
+
+            &::after {
+                rotate: 90deg;
+            }
+        }
+
+        &-body {
+            transition-duration: 0.3s;
+
+            @include tablet-above {
+                margin-left: calc(var(--faqAccordionHeaderColumnGap) + var(--icon-wrapper-size));
+            }
+        }
+    }
+}
