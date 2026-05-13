@@ -1,5 +1,13 @@
 @use '../helpers' as *;
 
 .advantages {
-    
+    &__item {
+        border-bottom: var(--border);
+
+        &:nth-child(odd) {
+            @include tablet-above {
+                border-right: var(--border);
+            }
+        }
+    }
 }

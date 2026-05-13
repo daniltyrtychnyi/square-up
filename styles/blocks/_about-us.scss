@@ -1,1 +1,13 @@
 @use '../helpers' as *;
+
+.about-us {
+    &__item {
+        border-bottom: var(--border);
+
+        &:nth-child(odd) {
+            @include tablet-above {
+                border-right: var(--border);
+            }
+        }
+    }
+}

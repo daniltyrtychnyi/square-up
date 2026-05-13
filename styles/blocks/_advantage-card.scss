@@ -3,7 +3,6 @@
 .advantage-card {
     &__main {
         padding: rem(80);
-        border: var(--border);
 
         @include laptop {
             padding: rem(60);

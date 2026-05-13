@@ -17,7 +17,6 @@
             top: 0;
             left: 50%;
             bottom: 0;
-            translate: -50%;
             border-left: var(--border);
         }
     }
@@ -42,7 +41,7 @@
 
         break-inside: avoid;
         counter-increment: custom-counter;
-        border: var(--border);
+        border-bottom: var(--border);
 
         &:nth-child(-n + 9) {
             --counterContent: '0' counter(custom-counter);
@@ -52,6 +51,18 @@
     &__accordion {
         padding: rem(30) rem(50);
         user-select: none;
+        cursor: pointer;
+
+        @include hover {
+            .faq__accordion-header {
+                color: var(--color-accent-70);
+            }
+
+            .faq__accordion-indicator::before,
+            .faq__accordion-indicator::after {
+                background-color: var(--color-accent-70);
+            }
+        }
 
         @include laptop {
             padding: rem(24) rem(40);
@@ -145,7 +156,7 @@
         }
 
         &-body {
-            transition-duration: 0.3s;
+            transition-duration: 0.5s;
 
             @include tablet-above {
                 margin-left: calc(var(--faqAccordionHeaderColumnGap) + var(--icon-wrapper-size));

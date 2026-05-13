@@ -1,0 +1,54 @@
+@use '../helpers' as *;
+
+.soc1als {
+    display: flex;
+    align-items: center;
+    column-gap: rem(20);
+    padding: rem(14) rem(14) rem(14) rem(24);
+    border: var(--border);
+    border-radius: rem(12);
+
+    @include laptop {
+        padding: rem(10) rem(10) rem(10) rem(20);
+    }
+
+    @include mobile {
+        padding-block: rem(16);
+        flex-direction: column;
+        justify-content: center;
+        row-gap: rem(14);
+        width: 100%;
+        max-width: rem(358);
+    }
+
+    &__list {
+        display: flex;
+        column-gap: rem(14);
+
+        @include laptop {
+            column-gap: rem(10);
+        }
+    }
+
+    &__link {
+        color: var(--color-accent);
+
+        @include hover {
+            color: var(--color-light);
+        }
+
+
+
+        &-icon-wrapper {
+            --icon-wrapper-size: #{rem(64)};
+
+            @include laptop {
+                --icon-wrapper-size: #{rem(52)};
+            }
+
+            svg {
+                @include abs-center;
+            }
+        }
+    }
+}

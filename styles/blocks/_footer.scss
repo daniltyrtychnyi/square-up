@@ -1,0 +1,132 @@
+@use '../helpers' as *;
+
+.footer {
+    padding-block: fluid(50, 30);
+    border-top: var(--border);
+
+    &__main {
+        display: flex;
+        align-items: center;
+
+        @include tablet {
+            flex-direction: column;
+        }
+    }
+
+    &__menu {
+        @include laptop-above {
+            margin-right: rem(100);
+        }
+
+        @include tablet-above {
+            margin-left: auto;
+            margin-right: rem(50);
+        }
+
+        @include tablet {
+            margin-top: rem(30);
+            padding-block: rem(30);
+            border-top: var(--border);
+        }
+
+        &-list {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: rem(30);
+
+            @include laptop {
+                column-gap: rem(20);
+            }
+
+            @include mobile {
+                justify-content: center;
+                row-gap: rem(20);
+            }
+        }
+    }
+
+    &__extra {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: fluid(50, 30);
+        padding-top: rem(50);
+
+        @include laptop {
+            padding-top: rem(40);
+        }
+
+        @include tablet-above {
+            border-top: var(--border);
+        }
+
+        @include tablet {
+            flex-direction: column;
+            row-gap: rem(20);
+        }
+
+        @include mobile {
+            padding-top: 0;
+        }
+
+        &-contacts {
+            &-list {
+                @include laptop-above {
+                    column-gap: rem(30);
+                }
+
+                @include laptop {
+                    column-gap: rem(22);
+                }
+
+                @include mobile-above {
+                    display: flex;
+                }
+            }
+
+            &-item {
+                position: relative;
+                padding-bottom: rem(16);
+                text-align: center;
+
+                @include laptop {
+                    padding-top: 0;
+                    padding-bottom: rem(12);
+                }
+
+                @include mobile-above {
+                    border-bottom: var(--border);
+                }
+
+                @include mobile {
+                    padding-block: rem(20);
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 50%;
+                        bottom: 0;
+                        translate: -50%;
+                        width: calc(100vw + (var(--container-padding-x) * 2) * -1);
+                        height: rem(1);
+                        background-color: var(--color-grey-15);
+                    }
+                }
+            }
+
+            &-link {
+                display: inline-flex;
+                column-gap: rem(10);
+                font-weight: 400;
+
+                svg {
+                    color: var(--color-accent);
+                }
+            }
+        }
+
+        &-copyright {
+            color: var(--color-grey-60);
+        }
+    }
+}
