@@ -103,10 +103,12 @@
         <section class="section" aria-labelledby="service-title">
             <div class="section__inner container">
                 <header class="section__header">
-                    <h2 class="section__title" id="service-title">Our Services</h2>
-                    <div class="section__description">
-                        <p>Transform your brand with our innovative digital solutions that captivate and engage your
-                            audience.</p>
+                    <div class="section__header-info">
+                        <h2 class="section__title" id="service-title">Our Services</h2>
+                        <div class="section__description">
+                            <p>Transform your brand with our innovative digital solutions that captivate and engage your
+                                audience.</p>
+                        </div>
                     </div>
                 </header>
                 <div class="section__body">
@@ -116,7 +118,7 @@
                                 <article class="service-card">
                                     <div class="service-card__main">
                                         <div class="service-card__header">
-                                            <span class="service-card__icon-wrapper icon-wrapper icon">
+                                            <span class="service-card__icon-wrapper icon-wrapper">
                                                 <img src="./images/icons/services/1.svg" alt=""
                                                     class="icon-wrapper__image" width="40" height="40" loading="lazy">
                                             </span>
@@ -138,7 +140,7 @@
                                 <article class="service-card">
                                     <div class="service-card__main">
                                         <div class="service-card__header">
-                                            <span class="service-card__icon-wrapper icon-wrapper icon">
+                                            <span class="service-card__icon-wrapper icon-wrapper">
                                                 <img src="./images/icons/services/2.svg" alt=""
                                                     class="icon-wrapper__image" width="40" height="40" loading="lazy">
                                             </span>
@@ -188,10 +190,12 @@
         <section class="section" aria-labelledby="advantages-title">
             <div class="section__inner container">
                 <header class="section__header section__header--advantages">
-                    <h2 class="section__title" id="advantages-title">Why Choose SquareUp?</h2>
-                    <div class="section__description">
-                        <p>Experience excellence in digital craftsmanship with our team of skilled professionals
-                            dedicated to delivering exceptional results.</p>
+                    <div class="section__header-info">
+                        <h2 class="section__title" id="advantages-title">Why Choose SquareUp?</h2>
+                        <div class="section__description">
+                            <p>Experience excellence in digital craftsmanship with our team of skilled professionals
+                                dedicated to delivering exceptional results.</p>
+                        </div>
                     </div>
                 </header>
                 <div class="section__body">
@@ -281,12 +285,15 @@
         <section class="section" aria-labelledby="about-us-title">
             <div class="section__inner container">
                 <header class="section__header section__header--about-us">
-                    <h2 class="section__title" id="about-us-title">What our Clients say About us</h2>
-                    <div class="section__description">
-                        <p>At SquareUp, we take pride in delivering exceptional digital products and services that drive
-                            success for our <br />
-                            clients. Here's what some of our satisfied clients have to say about their
-                            experience working with us</p>
+                    <div class="section__header-info">
+                        <h2 class="section__title" id="about-us-title">What our Clients say About us</h2>
+                        <div class="section__description">
+                            <p>At SquareUp, we take pride in delivering exceptional digital products and services that
+                                drive
+                                success for our <br />
+                                clients. Here's what some of our satisfied clients have to say about their
+                                experience working with us</p>
+                        </div>
                     </div>
                 </header>
                 <div class="section__body">
@@ -448,10 +455,12 @@
         <section class="section" aria-labelledby="faq-title">
             <div class="section__inner container">
                 <header class="section__header section__header--faq">
-                    <h2 class="section__title" id="faq-title">Frequently Asked Questions</h2>
-                    <div class="section__description">
-                        <p>Still you have any questions? Contact our Team via <a
-                                href="mailto:hello@squareup.com">hello@squareup.com</a></p>
+                    <div class="section__header-info">
+                        <h2 class="section__title" id="faq-title">Frequently Asked Questions</h2>
+                        <div class="section__description">
+                            <p>Still you have any questions? Contact our Team via <a
+                                    href="mailto:hello@squareup.com">hello@squareup.com</a></p>
+                        </div>
                     </div>
                 </header>
                 <div class="section__body">
@@ -585,6 +594,89 @@
                         </ol>
                     </div>
                 </div>
+        </section>
+        <section class="section" aria-labelledby="form-title">
+            <div class="section__inner container">
+                <header class="section__header section__header--form">
+                    <span class="section__icon-wrapper icon-wrapper icon-wrapper--accent">
+                        <img src="./images/icons/form-icon.svg" alt="" class="icon__wrapper-image" width="42"
+                            height="48" loading="lazy">
+                    </span>
+                    <div class="section__header-info">
+                        <h2 class="section__title" id="form-title">Thank you for your Interest in SquareUp.</h2>
+                        <div class="section__description">
+                            <p>We would love to hear from you and discuss how we can help bring your digital ideas to
+                                life. Here are the different ways <br />
+                                you can get in touch with us.</p>
+                        </div>
+                    </div>
+                    <a href="/" class="section__link button">Start Project</a>
+                </header>
+                <div class="section__body">
+                    <div class="feedback container-medium">
+                        <form action="/" class="feedback__form">
+                            <div class="feedback__form-top grid grid--2">
+                                <div class="feedback__form-cell feedback__form-cell--small field">
+                                    <label for="name" class="field__label">Full Name</label>
+                                    <input id="name" type="text" class="field__input" placeholder="Type here" autocomplete="name" required> 
+                                    <span class="field__input-line"></span>
+                                </div>
+                                <div class="feedback__form-cell feedback__form-cell--small field">
+                                    <label for="email" class="field__label">Email</label>
+                                    <input id="email" type="email" class="field__input" placeholder="Type here" autocomplete="email" required>
+                                    <span class="field__input-line"></span>
+                                </div>
+                            </div>
+                            <fieldset class="feedback__form-cell">
+                                <legend class="visually-hidden">Group checkboxes</legend>
+                                <span class="feedback__form-cell-label checkbox">Why are you contacting us?</span>
+                                <ul class="checkbox__list grid grid--2">
+                                    <li class="checkbox__item">
+                                        <label class="checkbox__wrapper">
+                                            <input type="checkbox" class="checkbox__input" checked>
+                                            <span class="checkbox__label">Web Design</span>
+                                        </label>
+                                    </li>
+                                    <li class="checkbox__item">
+                                        <label class="checkbox__wrapper">
+                                            <input type="checkbox" class="checkbox__input">
+                                            <span class="checkbox__label">Collaboration</span>
+                                        </label>
+                                    </li>
+                                    <li class="checkbox__item">
+                                        <label class="checkbox__wrapper">
+                                            <input type="checkbox" class="checkbox__input">
+                                            <span class="checkbox__label">Mobile App Design</span>
+                                        </label>
+                                    </li>
+                                    <li class="checkbox__item">
+                                        <label class="checkbox__wrapper">
+                                            <input type="checkbox" class="checkbox__input">
+                                            <span class="checkbox__label">Others</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                            <div class="feedback__form-cell">
+                                <label for="budget" class="feedback__form-cell-label feedback__form-cell-label--budget">Your Budget</label>
+                                <p class="feedback__form-cell-description">Slide to indicate your budget range</p>
+                                <div class="range__wrapper">
+                                    <input id="budget" type="range" class="range__input">
+                                    <input id="budget" type="range" class="range__input">
+                                </div>
+                            </div>
+                            <div class="feedback__form-cell field">
+                                <label for="message" class="field__label">Your Message</label>
+                                <textarea name="message" id="message" class="field__input field__input--textarea"
+                                    placeholder="Type here" required></textarea>
+                                    <span class="field__input-line"></span>
+                                    <!-- <span class="field__input-line"></span> -->
+                            </div>
+                            <button class="feedback__form-button button" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer class="footer">

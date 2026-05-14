@@ -2,14 +2,21 @@
 
 .section {
     &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
         padding-block: fluid(120, 50);
         background: url('../images/section-header_bg/services.svg') top/cover no-repeat;
 
+        &:has(.section__link) {
+            row-gap: fluid(50, 28);
+        }
+
         @include mobile-s {
             padding-inline: rem(16);
         }
-        
+
         &--advantages {
             background: url('../images/section-header_bg/advantages.svg') top/cover no-repeat;
         }
@@ -21,11 +28,25 @@
         &--faq {
             background: url('../images/section-header_bg/faq.svg') top/cover no-repeat;
         }
+
+        &--form {
+            background: url('../images/section-header_bg/form.svg') top/cover no-repeat;
+        }
     }
 
     &__title {
         &:not(:last-child) {
             margin-bottom: fluid(14, 6);
+        }
+    }
+
+    &__link {
+        padding-inline: rem(34);
+        height: rem(63);
+
+        @include laptop {
+            padding-inline: rem(24);
+            height: rem(49);
         }
     }
 

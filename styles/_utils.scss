@@ -6,6 +6,15 @@
     padding-inline: var(--container-padding-x);
 }
 
+.container-medium {
+    --container-width: #{rem(1060)};
+    --container-padding-x: #{rem(24)};
+
+    max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+    margin-inline: auto;
+    padding-inline: var(--container-padding-x);
+}
+
 .visually-hidden {
     @include visually-hidden;
 }

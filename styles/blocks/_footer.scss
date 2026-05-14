@@ -14,17 +14,19 @@
     }
 
     &__menu {
-        @include laptop-above {
-            margin-right: rem(100);
+        margin-right: rem(100);
+
+        @include laptop {
+            margin-right: rem(50);
         }
 
         @include tablet-above {
             margin-left: auto;
-            margin-right: rem(50);
         }
 
         @include tablet {
             margin-top: rem(30);
+            margin-right: 0;
             padding-block: rem(30);
             border-top: var(--border);
         }

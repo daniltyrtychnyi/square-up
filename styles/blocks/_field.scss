@@ -1,0 +1,63 @@
+@use '../helpers' as *;
+
+.field {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    &__label {
+        @include fluid-text(22, 14);
+
+        font-weight: 500;
+        margin-bottom: fluid(20, 14);
+    }
+
+    &__input {
+        --fieldInputBorderBottom: #{rem(1)} solid var(--color-accent);
+
+        width: 100%;
+        padding-bottom: rem(6);
+        color: var(--color-light);
+        background-color: transparent;
+        border: none;
+        transition-duration: 0.3s;
+
+        @include hover {
+            border-bottom: var(--fieldInputBorderBottom);
+        }
+
+        &:focus {
+            outline: none;
+            border-bottom: var(--fieldInputBorderBottom);
+        }
+
+        &:user-invalid {
+            border-bottom: rem(1) solid red;
+        }
+
+        &:user-valid {
+            border-bottom: var(--fieldInputBorderBottom);
+        }
+
+        &::placeholder {
+            color: var(--color-grey-40);
+        }
+
+        &-line {
+            width: 100%;
+            height: rem(1);
+            background-color: var(--color-grey-15);
+
+            // &:not(:last-child) {
+            //     margin-bottom: rem(40);
+            // }
+        }
+
+        &--textarea {
+            width: 100% !important;
+            resize: none;
+            overflow-y: hidden;
+            height: rem(33);
+        }
+    }
+}
