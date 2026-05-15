@@ -1,6 +1,44 @@
 @use '../helpers' as *;
 
 .services {
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding: fluid(120, 40) fluid(50, 16) fluid(50, 40);
+
+        &:not(:first-child) {
+            border-top: var(--border);
+        }
+    }
+
+    &__title {
+        &:not(:last-child) {
+            margin-bottom: rem(14);
+        }
+    }
+
+    &__description {
+        &:not(:last-child) {
+            margin-bottom: rem(50);
+        }
+    }
+
+    &__body {
+        &-title {
+            @include fluid-text(28, 20);
+
+            padding: rem(50);
+            font-weight: 500;
+            color: var(--color-grey-60);
+            border-block: var(--border);
+
+            @include laptop {
+                padding: rem(40);
+            }
+        }
+    }
+
     &__item {
         &:not(:last-child) {
             @include tablet-above {
@@ -9,7 +47,33 @@
 
             @include tablet {
                 border-bottom: var(--border);
+
+                &:nth-child(3) {
+                    border-bottom: 0;
+                }
             }
+        }
+
+        &--services-page {
+            &:nth-child(odd) {
+                @include tablet {
+                    border-right: var(--border);
+                }
+            }
+        }
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        row-gap: fluid(30, 24);
+        padding: fluid(50, 20);
+
+        &-title {
+            @include fluid-text(20, 16);
+
+            font-weight: 500;
         }
     }
 }
