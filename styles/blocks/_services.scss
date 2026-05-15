@@ -27,12 +27,15 @@
 
             padding: rem(50);
             font-weight: 500;
-            text-align: center;
             color: var(--color-grey-60);
             border-block: var(--border);
 
             @include laptop {
                 padding: rem(40);
+            }
+
+            @include mobile {
+               text-align: center;
             }
         }
     }
