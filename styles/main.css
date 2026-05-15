@@ -250,6 +250,7 @@ svg * {
   --color-grey-90: #E6E6E6;
   --font-family-base: 'Barlow', sans-serif;
   --border: 0.0625rem solid var(--color-grey-15);
+  --border-accent: 0.0625rem solid var(--color-accent);
   --border-radius: 0.625rem;
   --border-radius-small: 0.5rem;
 }
@@ -369,6 +370,12 @@ a {
 }
 a[class] {
   text-decoration: none;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-bottom: var(--border-accent);
 }
 
 :focus-visible {
@@ -1537,7 +1544,10 @@ input:-webkit-autofill:active {
   margin-bottom: clamp(0.875rem, 0.7794117647rem + 0.3921568627vw, 1.25rem);
 }
 .field__input {
-  --fieldInputBorderBottom: 0.0625rem solid var(--color-accent);
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  box-shadow: 0;
   width: 100%;
   padding-bottom: 0.375rem;
   color: var(--color-light);
@@ -1547,23 +1557,23 @@ input:-webkit-autofill:active {
 }
 @media (any-hover: hover) {
   .field__input:hover {
-    border-bottom: var(--fieldInputBorderBottom);
+    border-bottom: var(--border-accent);
   }
 }
 @media (any-hover: none) {
   .field__input::active {
-    border-bottom: var(--fieldInputBorderBottom);
+    border-bottom: var(--border-accent);
   }
 }
 .field__input:focus {
   outline: none;
-  border-bottom: var(--fieldInputBorderBottom);
+  border-bottom: var(--border-accent);
 }
 .field__input:user-invalid {
   border-bottom: 0.0625rem solid red;
 }
 .field__input:user-valid {
-  border-bottom: var(--fieldInputBorderBottom);
+  border-bottom: var(--border-accent);
 }
 .field__input::placeholder {
   color: var(--color-grey-40);

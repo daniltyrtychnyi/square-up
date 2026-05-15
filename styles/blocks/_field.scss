@@ -13,8 +13,10 @@
     }
 
     &__input {
-        --fieldInputBorderBottom: #{rem(1)} solid var(--color-accent);
-
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 0;
+        box-shadow: 0;
         width: 100%;
         padding-bottom: rem(6);
         color: var(--color-light);
@@ -23,12 +25,12 @@
         transition-duration: 0.3s;
 
         @include hover {
-            border-bottom: var(--fieldInputBorderBottom);
+            border-bottom: var(--border-accent);
         }
 
         &:focus {
             outline: none;
-            border-bottom: var(--fieldInputBorderBottom);
+            border-bottom: var(--border-accent);
         }
 
         &:user-invalid {
@@ -36,7 +38,7 @@
         }
 
         &:user-valid {
-            border-bottom: var(--fieldInputBorderBottom);
+            border-bottom: var(--border-accent);
         }
 
         &::placeholder {

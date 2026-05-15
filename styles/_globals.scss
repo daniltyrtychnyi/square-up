@@ -97,6 +97,12 @@ a {
     }
 }
 
+input:focus,
+textarea:focus {
+    outline: none;
+    border-bottom: var(--border-accent);
+}
+
 :focus-visible {
     outline: rem(2) solid var(--color-light);
     outline-offset: rem(3);
