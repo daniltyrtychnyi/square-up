@@ -1,6 +1,8 @@
 @use '../helpers' as *;
 
 .tag {
+    @include fluid-text(22, 16);
+
     @include laptop {
         padding: rem(8) rem(10);
     }
@@ -15,5 +17,16 @@
 
     @include mobile {
         padding: 0;
+    }
+
+    &--service-page {
+        padding: rem(12) rem(14);
+        color: var(--color-light);
+        background-color: var(--color-grey-15);
+        border-radius: var(--border-radius-small);
+
+        @include laptop {
+            padding: rem(10);
+        }
     }
 }
