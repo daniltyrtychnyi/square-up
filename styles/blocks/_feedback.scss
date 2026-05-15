@@ -30,6 +30,10 @@
             border: var(--border);
             border-radius: var(--border-radius-small);
 
+            &:nth-child(3) {
+                padding-bottom: rem(66);
+            }
+
             &-label {
                 @include fluid-text(22, 16);
 

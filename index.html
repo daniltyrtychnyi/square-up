@@ -618,12 +618,14 @@
                             <div class="feedback__form-top grid grid--2">
                                 <div class="feedback__form-cell feedback__form-cell--small field">
                                     <label for="name" class="field__label">Full Name</label>
-                                    <input id="name" type="text" class="field__input" placeholder="Type here" autocomplete="name" required> 
+                                    <input id="name" type="text" class="field__input" placeholder="Type here"
+                                        autocomplete="name" required>
                                     <span class="field__input-line"></span>
                                 </div>
                                 <div class="feedback__form-cell feedback__form-cell--small field">
                                     <label for="email" class="field__label">Email</label>
-                                    <input id="email" type="email" class="field__input" placeholder="Type here" autocomplete="email" required>
+                                    <input id="email" type="email" class="field__input" placeholder="Type here"
+                                        autocomplete="email" required>
                                     <span class="field__input-line"></span>
                                 </div>
                             </div>
@@ -658,19 +660,25 @@
                                 </ul>
                             </fieldset>
                             <div class="feedback__form-cell">
-                                <label for="budget" class="feedback__form-cell-label feedback__form-cell-label--budget">Your Budget</label>
+                                <span class="feedback__form-cell-label feedback__form-cell-label--budget">Your
+                                    Budget</span>
                                 <p class="feedback__form-cell-description">Slide to indicate your budget range</p>
-                                <div class="range__wrapper">
-                                    <input id="budget" type="range" class="range__input">
-                                    <input id="budget" type="range" class="range__input">
+                                <div class="range-slider">
+                                    <span class="range-slider__track"></span>
+                                    <input type="range" class="range-slider__input" min="0" max="10000"
+                                        value="1000">
+                                    <input name="max_input" type="range" class="range-slider__input" min="0" max="10000"
+                                        value="5000">
+                                    <div class="range-slider__tooltip range-slider__tooltip--min"></div>
+                                    <div class="range-slider__tooltip range-slider__tooltip--max"></div>
                                 </div>
                             </div>
                             <div class="feedback__form-cell field">
                                 <label for="message" class="field__label">Your Message</label>
                                 <textarea name="message" id="message" class="field__input field__input--textarea"
                                     placeholder="Type here" required></textarea>
-                                    <span class="field__input-line"></span>
-                                    <!-- <span class="field__input-line"></span> -->
+                                <span class="field__input-line"></span>
+                                <!-- <span class="field__input-line"></span> -->
                             </div>
                             <button class="feedback__form-button button" type="submit">Submit</button>
                         </form>
