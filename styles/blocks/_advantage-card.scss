@@ -9,8 +9,7 @@
         }
 
         @include mobile {
-            padding-block: rem(40);
-            padding-inline: rem(30);
+            padding: rem(40) rem(30);
         }
     }
 

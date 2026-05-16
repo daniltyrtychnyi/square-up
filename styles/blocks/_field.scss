@@ -21,16 +21,16 @@
         padding-bottom: rem(6);
         color: var(--color-light);
         background-color: transparent;
-        border: none;
+        border: rem(1) solid transparent;
         transition-duration: 0.3s;
 
         @include hover {
-            border-bottom: var(--border-accent);
+            border-bottom-color: var(--color-accent);
         }
 
         &:focus {
             outline: none;
-            border-bottom: var(--border-accent);
+            border-bottom-color: var(--color-accent);
         }
 
         &:user-invalid {
@@ -38,7 +38,7 @@
         }
 
         &:user-valid {
-            border-bottom: var(--border-accent);
+            border-bottom-color: var(--color-accent);
         }
 
         &::placeholder {

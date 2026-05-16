@@ -15,7 +15,7 @@
     &--3,
     &--2 {
         @include tablet {
-            grid-template-columns: 1fr;
+            --gridColumn: 1;
         }
     }
 

@@ -8,12 +8,11 @@
     flex-direction: column;
     justify-content: space-between;
     padding: rem(8.5) rem(4.25);
-    background-color: transparent;
     border: none;
 
     @include hover {
-        &::after {
-            border-color: var(--color-accent-80);
+        .burger-button__line {
+            background-color: var(--color-light);
         }
     }
 
@@ -23,7 +22,6 @@
 
         content: '';
         background-color: var(--color-grey-15);
-        border: rem(1) solid transparent;
         border-radius: var(--border-radius-small);
     }
 

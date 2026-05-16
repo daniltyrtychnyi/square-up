@@ -2,14 +2,20 @@
 
 .section {
     &__header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         text-align: center;
         padding-block: fluid(120, 50);
-        background: url('../images/section-header_bg/services.svg') top/cover no-repeat;
+        background-position: 100% 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &-image {
+            position: relative;
+        }
 
         &:has(.section__link) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             row-gap: fluid(50, 28);
         }
 
@@ -17,24 +23,28 @@
             padding-inline: rem(16);
         }
 
+        &--services {
+            background-image: url('../images/section-header_bg/services.svg');
+        }
+
         &--advantages {
-            background: url('../images/section-header_bg/advantages.svg') top/cover no-repeat;
+            background-image: url('../images/section-header_bg/advantages.svg');
         }
 
         &--about-us {
-            background: url('../images/section-header_bg/about-us.svg') top/cover no-repeat;
+            background-image: url('../images/section-header_bg/about-us.svg');
         }
 
         &--faq {
-            background: url('../images/section-header_bg/faq.svg') top/cover no-repeat;
+            background-image: url('../images/section-header_bg/faq.svg');
         }
 
         &--form {
-            background: url('../images/section-header_bg/form.svg') top/cover no-repeat;
+            background-image: url('../images/section-header_bg/form.svg');
         }
 
         &--work {
-            background: url('../images/section-header_bg/work.svg') top/cover no-repeat;
+            background-image: url('../images/section-header_bg/work.svg');
         }
     }
 

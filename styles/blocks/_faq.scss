@@ -14,9 +14,8 @@
         &::before {
             content: '';
             position: absolute;
-            top: 0;
             left: 50%;
-            bottom: 0;
+            inset-block: 0;
             border-left: var(--border);
         }
     }
@@ -41,7 +40,7 @@
 
         break-inside: avoid;
         counter-increment: custom-counter;
-        border-bottom: var(--border);
+        border-block: var(--border);
 
         &:nth-child(-n + 9) {
             --counterContent: '0' counter(custom-counter);

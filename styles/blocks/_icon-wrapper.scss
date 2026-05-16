@@ -12,7 +12,7 @@
     &--accent {
         background-color: var(--color-accent);
         border-radius: rem(15);
-        box-shadow: inset 0 0 14px 6px rgba(255, 255, 255, 0.5);
+        box-shadow: inset 0 0 rem(14) rem(6) rgba(255, 255, 255, 0.5);
     }
 
     &__image {
