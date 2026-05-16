@@ -663,14 +663,14 @@
                                 <span class="feedback__form-cell-label feedback__form-cell-label--budget">Your
                                     Budget</span>
                                 <p class="feedback__form-cell-description">Slide to indicate your budget range</p>
-                                <div class="range-slider">
-                                    <span class="range-slider__track"></span>
+                                <div class="range-slider" data-js-range-slider>
+                                    <span class="range-slider__track" data-js-range-slider-track></span>
                                     <input type="range" class="range-slider__input" min="0" max="10000"
-                                        value="1000">
+                                        value="1000" data-js-range-slider-min-value>
                                     <input name="max_input" type="range" class="range-slider__input" min="0" max="10000"
-                                        value="5000">
-                                    <div class="range-slider__tooltip range-slider__tooltip--min"></div>
-                                    <div class="range-slider__tooltip range-slider__tooltip--max"></div>
+                                        value="5000" data-js-range-slider-max-value>
+                                    <div class="range-slider__tooltip range-slider__tooltip--min" data-js-range-slider-tooltip-min></div>
+                                    <div class="range-slider__tooltip range-slider__tooltip--max" data-js-range-slider-tooltip-max></div>
                                 </div>
                             </div>
                             <div class="feedback__form-cell field">
