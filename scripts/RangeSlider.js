@@ -4,49 +4,54 @@ class RangeSlider {
     selectors = {
         root: '[data-js-range-slider]',
         track: '[data-js-range-slider-track]',
-        minValue: '[data-js-range-slider-min-value]',
-        maxValue: '[data-js-range-slider-max-value]',
+        minInput: '[data-js-range-slider-min-value]',
+        maxInput: '[data-js-range-slider-max-value]',
         minTooltip: '[data-js-range-slider-tooltip-min]',
         maxTooltip: '[data-js-range-slider-tooltip-max]',
     }
 
     constructor() {
         this.rootElement = document.querySelector(this.selectors.root)
+
+        if (!this.rootElement) {
+            return
+        }
+
         this.trackElement = this.rootElement.querySelector(this.selectors.track)
-        this.minValueElement = this.rootElement.querySelector(this.selectors.minValue)
-        this.maxValueElement = this.rootElement.querySelector(this.selectors.maxValue)
+        this.minInputElement = this.rootElement.querySelector(this.selectors.minInput)
+        this.maxInputElement = this.rootElement.querySelector(this.selectors.maxInput)
         this.minTooltipElement = this.rootElement.querySelector(this.selectors.minTooltip)
         this.maxTooltipElement = this.rootElement.querySelector(this.selectors.maxTooltip)
-        this.minLimit = Number(this.minValueElement.min)
-        this.maxLimit = Number(this.maxValueElement.max)
+        this.minLimitElement = Number(this.minInputElement.min)
+        this.maxLimitElement = Number(this.maxInputElement.max)
         this.bindEvents()
         this.updateUI()
     }
 
-    onClickMinSlide = () => {
-        let gap = Number(this.maxValueElement.value) - Number(this.minValueElement.value)
+    onMinSlide = () => {
+        let gap = Number(this.maxInputElement.value) - Number(this.minInputElement.value)
 
         if (gap <= this.minGap) {
-            this.minValueElement.value = Number(this.maxValueElement.value) - this.minGap
+            this.minInputElement.value = Number(this.maxInputElement.value) - this.minGap            
         }
         this.updateUI()
     }
 
-    onClickMaxSlide = () => {
-        let gap = Number(this.maxValueElement.value) - Number(this.minValueElement.value)
+    onMaxSlide = () => {
+        let gap = Number(this.maxInputElement.value) - Number(this.minInputElement.value)
 
         if (gap <= this.minGap) {
-            this.maxValueElement.value = Number(this.minValueElement.value) + this.minGap
+            this.maxInputElement.value = Number(this.minInputElement.value) + this.minGap
         }
         this.updateUI()
     }
 
     updateUI() {
-        this.minTooltipElement.textContent = `$${this.minValueElement.value}`
-        this.maxTooltipElement.textContent = `$${this.maxValueElement.value}`
-
-        const minPercent = (this.minValueElement.value - this.minLimit) / (this.maxLimit - this.minLimit) * 100
-        const maxPercent = (this.maxValueElement.value - this.minLimit) / (this.maxLimit - this.minLimit) * 100
+        this.minTooltipElement.textContent = `$${this.minInputElement.value}`
+        this.maxTooltipElement.textContent = `$${this.maxInputElement.value}`
+ 
+        const minPercent = (this.minInputElement.value - this.minLimitElement) / (this.maxLimitElement - this.minLimitElement) * 100
+        const maxPercent = (this.maxInputElement.value - this.minLimitElement) / (this.maxLimitElement - this.minLimitElement) * 100
 
         this.trackElement.style.left = `${minPercent}%`
         this.trackElement.style.width = `${maxPercent - minPercent}%`
@@ -56,8 +61,8 @@ class RangeSlider {
     }
 
     bindEvents() {
-        this.minValueElement.addEventListener('input', this.onClickMinSlide)
-        this.maxValueElement.addEventListener('input', this.onClickMaxSlide)
+        this.minInputElement.addEventListener('input', this.onMinSlide)
+        this.maxInputElement.addEventListener('input', this.onMaxSlide)
     }
 }
 

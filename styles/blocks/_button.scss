@@ -3,14 +3,14 @@
 .button {
     @include flex-center(true);
 
-    padding-inline: rem(24);
-    height: rem(59);
+    padding-inline: rem(28);
+    height: rem(58);
     white-space: nowrap;
     font-weight: 500;
     color: var(--color-grey-15);
     background-color: var(--color-accent);
-    border-radius: var(--border-radius-small);
-    border: 1px solid currentColor;
+    border-radius: var(--border-radius);
+    border: rem(1) solid transparent;
 
     @include hover {
         background-color: transparent;
@@ -19,19 +19,31 @@
     }
 
     @include laptop {
-        padding-inline: rem(18);
+        padding-inline: rem(20);
         height: rem(45);
-        align-self: center;
     }
 
     @include tablet {
         padding-inline: rem(15);
     }
 
+    &--glass,
     &--dark {
         color: var(--color-light);
+    }
+
+    &--glass {
         background: var(--background);
         backdrop-filter: var(--backdrop-filter);
-        border: rem(1) solid var(--color-grey-15);
+        border-color: var(--color-grey-20);
+    }
+
+    &--dark {
+        padding-inline: rem(20);
+        background-color: var(--color-grey-15);
+
+        @include laptop {
+            padding-inline: rem(16);
+        }
     }
 }

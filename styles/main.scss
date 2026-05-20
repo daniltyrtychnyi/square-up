@@ -14,12 +14,9 @@
 @use 'blocks/link';
 @use 'blocks/icon-wrapper';
 @use 'blocks/service-card';
-@use 'blocks/services';
 @use 'blocks/section';
 @use 'blocks/advantage-card';
-@use 'blocks/advantages';
 @use 'blocks/review-card';
-@use 'blocks/about-us';
 @use 'blocks/faq';
 @use 'blocks/soc1als';
 @use 'blocks/footer';
@@ -27,3 +24,6 @@
 @use 'blocks/checkbox';
 @use 'blocks/field';
 @use 'blocks/feedback';
+@use 'blocks/list';
+@use 'blocks/section-alt';
+@use 'blocks/work-card';

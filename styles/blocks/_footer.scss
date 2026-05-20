@@ -33,7 +33,6 @@
 
         &-list {
             display: flex;
-            flex-wrap: wrap;
             column-gap: rem(30);
 
             @include laptop {
@@ -41,6 +40,7 @@
             }
 
             @include mobile {
+                flex-wrap: wrap;
                 justify-content: center;
                 row-gap: rem(20);
             }

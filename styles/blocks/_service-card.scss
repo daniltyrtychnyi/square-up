@@ -41,4 +41,10 @@
     &__link {
         margin-inline: auto;
     }
+
+    &--services-page {
+        row-gap: fluid(30, 24);
+        padding: fluid(50, 20);
+        height: auto;
+    }
 }

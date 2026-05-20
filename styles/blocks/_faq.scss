@@ -1,4 +1,5 @@
 @use '../helpers' as *;
+@use '../blocks/icon-wrapper' as *;
 
 .faq {
     --faqAccordionHeaderColumnGap: #{fluid(30, 20)};
@@ -40,7 +41,7 @@
 
         break-inside: avoid;
         counter-increment: custom-counter;
-        border-block: var(--border);
+        border: var(--border);
 
         &:nth-child(-n + 9) {
             --counterContent: '0' counter(custom-counter);
@@ -72,7 +73,8 @@
         }
 
         &[open] {
-            .faq__accordion-header {
+            .faq__accordion-header,
+            .faq__accordion-title {
                 color: var(--color-accent-70);
 
                 @include mobile {
@@ -100,7 +102,7 @@
             column-gap: var(--faqAccordionHeaderColumnGap);
         }
 
-        &-icon {
+        &-icon-wrapper {
             @include tablet {
                 padding: rem(14);
             }
@@ -112,12 +114,6 @@
                 content: var(--counterContent);
                 font-weight: 600;
             }
-        }
-
-        &-title {
-            @include fluid-text(22, 16);
-
-            font-weight: 500;
         }
 
         &-indicator {
@@ -155,10 +151,12 @@
         }
 
         &-body {
+            --iconWrapperOffsetX: #{fluid(88, 58)};
+
             transition-duration: 0.5s;
 
             @include tablet-above {
-                margin-left: calc(var(--faqAccordionHeaderColumnGap) + var(--icon-wrapper-size));
+                margin-left: calc(var(--faqAccordionHeaderColumnGap) + var(--iconWrapperOffsetX));
             }
         }
     }

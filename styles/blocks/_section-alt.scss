@@ -1,0 +1,38 @@
+@use '../helpers' as *;
+
+.section-alt {
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding: fluid(120, 40) fluid(50, 16) fluid(50, 40);
+        border-top: var(--border);
+    }
+
+    &__title {
+        &:not(:last-child) {
+            margin-bottom: fluid(14, 6);
+        }
+    }
+
+    &__description {
+        &:not(:last-child) {
+            margin-bottom: fluid(50, 30);
+        }
+    }
+
+    &__subtitle {
+        padding: rem(50);
+        font-weight: 500;
+        color: var(--color-grey-60);
+        border-block: var(--border);
+
+        @include laptop {
+            padding: rem(40);
+        }
+
+        @include mobile {
+            text-align: center;
+        }
+    }
+}

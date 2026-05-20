@@ -14,8 +14,6 @@
     }
 
     &__title {
-        @include fluid-text(28, 18);
-
         color: var(--color-accent-80);
 
         &:not(:last-child) {
@@ -65,6 +63,5 @@
 
     &__link {
         margin-left: auto;
-        background-color: var(--color-grey-15);
     }
 }

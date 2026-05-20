@@ -1,0 +1,15 @@
+@use '../helpers' as *;
+
+.list {
+    &__item {
+        border: var(--border);
+
+        &-subtitle {
+            padding: fluid(30, 20) fluid(50, 20);
+            font-weight: 500;
+            white-space: wrap;
+            color: var(--color-grey-60);
+            border-block: var(--border);
+        }
+    }
+}

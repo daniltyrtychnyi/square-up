@@ -56,10 +56,20 @@
         }
 
         &--textarea {
-            width: 100% !important;
             resize: none;
-            overflow-y: hidden;
-            height: rem(33);
+            overflow-y: auto;
+        }
+    }
+
+    &__error {
+        display: inline-flex;
+        flex-direction: column;
+        row-gap: rem(5);
+        color: red;
+        font-size: rem(14);
+
+        &:empty {
+            display: none;
         }
     }
 }

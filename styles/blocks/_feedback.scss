@@ -72,6 +72,8 @@
         }
 
         &-button {
+            padding-inline: rem(44);
+            height: rem(63);
             align-self: center;
 
             @include mobile {

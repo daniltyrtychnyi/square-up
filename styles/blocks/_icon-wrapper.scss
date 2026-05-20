@@ -1,7 +1,9 @@
 @use '../helpers' as *;
 
 .icon-wrapper {
-    @include square(var(--icon-wrapper-size));
+    --iconWrapperSize: #{fluid(88, 58)};
+
+    @include square(var(--iconWrapperSize));
 
     position: relative;
     flex-shrink: 0;
@@ -10,7 +12,7 @@
     border-radius: var(--border-radius);
 
     &--accent {
-        background-color: var(--color-accent);
+        background: var(--color-accent);
         border-radius: rem(15);
         box-shadow: inset 0 0 rem(14) rem(6) rgba(255, 255, 255, 0.5);
     }
@@ -20,5 +22,21 @@
 
         @include abs-center;
         @include square(var(--iconImageSize));
+    }
+
+    &--dark {
+        --iconWrapperSize: #{rem(54)};
+        
+        background: var(--color-grey-15);
+
+        @include laptop {
+            --iconWrapperSize: #{rem(46)};
+        }
+
+        svg {
+            @include abs-center;
+
+            color: var(--color-accent);
+        }
     }
 }

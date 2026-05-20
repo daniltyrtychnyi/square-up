@@ -19,7 +19,8 @@
         }
     }
 
-    &--4 {
+    &--4,
+    &--6 {
         @include tablet {
             --gridColumn: 2;
         }

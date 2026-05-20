@@ -67,11 +67,17 @@ h3,
 
 h4,
 .h4 {
-    font-size: rem(26);
+    @include fluid-text(26, 20);
+}
 
-    @include laptop {
-        font-size: rem(20);
-    }
+h5,
+.h5 {
+    @include fluid-text(22, 16)
+}
+
+h6,
+.h6 {
+    @include fluid-text(20, 16);
 }
 
 a,
@@ -114,14 +120,4 @@ a {
             content: '';
         }
     }
-}
-
-//удаление фона при автозаполнении
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 rem(1000) var(--color-grey-15) inset !important;
-    box-shadow: 0 0 0 rem(1000) var(--color-grey-15) inset !important;
-    -webkit-text-fill-color: var(--color-light) !important;
 }
