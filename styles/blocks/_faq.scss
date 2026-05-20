@@ -73,10 +73,13 @@
         }
 
         &[open] {
+
             .faq__accordion-header,
             .faq__accordion-title {
                 color: var(--color-accent-70);
+            }
 
+            .faq__accordion-header {
                 @include mobile {
                     margin-bottom: rem(24);
                 }

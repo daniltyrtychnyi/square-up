@@ -1219,8 +1219,7 @@ a[aria-label]::after {
   color: var(--color-accent-70);
 }
 @media (width <= 47.99875rem) {
-  .faq__accordion[open] .faq__accordion-header,
-  .faq__accordion[open] .faq__accordion-title {
+  .faq__accordion[open] .faq__accordion-header {
     margin-bottom: 1.5rem;
   }
 }
