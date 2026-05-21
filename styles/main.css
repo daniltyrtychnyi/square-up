@@ -1017,22 +1017,25 @@ a[aria-label]::after {
   }
 }
 .section__banner--services {
-  background-image: url("../images/section-header_bg/services.svg");
+  background-image: url("../images/section-banner_bg/services.svg");
 }
 .section__banner--advantages {
-  background-image: url("../images/section-header_bg/advantages.svg");
+  background-image: url("../images/section-banner_bg/advantages.svg");
 }
 .section__banner--about-us {
-  background-image: url("../images/section-header_bg/about-us.svg");
+  background-image: url("../images/section-banner_bg/about-us.svg");
 }
 .section__banner--faq {
-  background-image: url("../images/section-header_bg/faq.svg");
+  background-image: url("../images/section-banner_bg/faq.svg");
 }
 .section__banner--form {
-  background-image: url("../images/section-header_bg/form.svg");
+  background-image: url("../images/section-banner_bg/form.svg");
 }
 .section__banner--work {
-  background-image: url("../images/section-header_bg/work.svg");
+  background-image: url("../images/section-banner_bg/work.svg");
+}
+.section__banner--process {
+  background-image: url("../images/section-banner_bg/process.svg");
 }
 .section__title:not(:last-child) {
   margin-bottom: clamp(0.375rem, 0.2475490196rem + 0.522875817vw, 0.875rem);
@@ -1674,14 +1677,14 @@ a[aria-label]::after {
   resize: none;
   overflow-y: auto;
 }
-.field__error {
+.field__errors {
   display: inline-flex;
   flex-direction: column;
   row-gap: 0.3125rem;
   color: red;
   font-size: 0.875rem;
 }
-.field__error:empty {
+.field__errors:empty {
   display: none;
 }
 
@@ -1869,6 +1872,51 @@ a[aria-label]::after {
   .work-card__icon-wrapper {
     align-self: end;
   }
+}
+
+.process__list {
+  counter-reset: custom-counter;
+  list-style: none;
+}
+.process__item {
+  --customCounter: counter(custom-counter);
+  counter-increment: custom-counter;
+  border: var(--border);
+}
+.process__item:nth-child(-n+9) {
+  --customCounter: '0' counter(custom-counter);
+}
+.process__card {
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(1.875rem, 1.556372549rem + 1.3071895425vw, 3.125rem);
+  padding: clamp(2.5rem, 1.5441176471rem + 3.9215686275vw, 6.25rem) clamp(1.5rem, 1.0857843137rem + 1.6993464052vw, 3.125rem);
+}
+.process__card-header {
+  display: flex;
+  align-items: center;
+  column-gap: 0.875rem;
+  height: clamp(4.0625rem, 3.1862745098rem + 3.5947712418vw, 7.5rem);
+}
+@media (width <= 47.99875rem) {
+  .process__card-header {
+    column-gap: 0.625rem;
+  }
+}
+.process__card-counter::before {
+  font-size: clamp(5rem, 3.8848039216rem + 4.5751633987vw, 9.375rem);
+  content: var(--customCounter);
+  font-weight: 600;
+  color: var(--color-accent-80);
+}
+.process__card-title, .process__card-description {
+  color: var(--color-grey-60);
+}
+.process__card-title {
+  align-self: end;
+  padding-bottom: clamp(0.875rem, 0.6838235294rem + 0.7843137255vw, 1.625rem);
+  border-bottom: var(--border);
+  width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

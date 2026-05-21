@@ -1,7 +1,7 @@
 import Header from "./Header.js";
-import RangeSlider from "./RangeSlider.js";
+import FormRangeSlider from "./FormRangeSlider.js";
 import FormValidation from "./FormValidation.js";
 
 new Header()
-new RangeSlider()
+new FormRangeSlider()
 new FormValidation()
