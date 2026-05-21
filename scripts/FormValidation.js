@@ -5,10 +5,10 @@ class FormValidation {
     }
 
     errorMessages = {
-        valueMissing: () => 'Пожалуйста, заполните это поле',
-        patternMismatch: ({ title }) => title || 'Данные не соответствуют формату',
-        tooShort: ({ minLength }) => `Слишком короткое значение, минимум символов - ${minLength}`,
-        tooLong: ({ maxLength }) => `Слишком длинное значение, ограничение символов - ${maxLength}`,
+        valueMissing: () => 'Please fill in this field',
+        patternMismatch: ({ title }) => title || 'The data does not match the format',
+        tooShort: ({ minLength }) => `The value is too short, with a minimum of characters - ${minLength}`,
+        tooLong: ({ maxLength }) => `The value is too long, the characters are limited - ${maxLength}`,
     }
 
     constructor() {
