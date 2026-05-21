@@ -66,8 +66,6 @@ class FormValidation {
     }
 
     onSubmit(event) {
-        event.preventDefault()
-
         const isFormField = event.target.matches(this.selectors.form)
 
         if (!isFormField) {

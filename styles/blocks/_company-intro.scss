@@ -1,0 +1,94 @@
+@use '../helpers' as *;
+
+.company-intro {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(50, 30);
+    padding: fluid(80, 40) fluid(80, 24);
+
+    &__header {
+        display: flex;
+        align-items: center;
+        column-gap: rem(40);
+
+        @include laptop {
+            column-gap: rem(30);
+        }
+
+        @include tablet {
+            flex-direction: column;
+            row-gap: rem(24);
+            text-align: center;
+        }
+    }
+
+    &__today-title,
+    &__invite,
+    &__welcome {
+        color: var(--color-grey-60);
+    }
+
+    &__today {
+        &:not(:last-child) {
+            margin-bottom: fluid(20, 10);
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: rem(20);
+        padding: rem(24) fluid(40, 20);
+        background: var(--background);
+        backdrop-filter: var(--backdrop-filter);
+        border-radius: rem(12);
+        border: var(--border);
+
+        @include tablet {
+            flex-direction: column;
+        }
+
+        @include mobile {
+            padding-block: rem(20);
+        }
+    }
+
+    &__welcome {
+        font-size: rem(20);
+
+        @include laptop {
+            font-size: rem(18);
+        }
+
+        @include tablet {
+            &:not(:last-child) {
+                margin-bottom: rem(14);
+            }
+        }
+    }
+
+    &__tag {
+        padding: rem(14) rem(20);
+        font-size: rem(20);
+
+        @include laptop {
+            padding: rem(10) rem(14);
+            font-size: rem(16);
+        }
+
+        @include tablet {
+            &:not(:last-child) {
+                margin-bottom: rem(20);
+            }   
+        }
+    }
+
+    &__link {
+        @include tablet {
+            align-self: center;
+            width: 100%;
+            max-width: rem(270);
+        }
+    }
+}

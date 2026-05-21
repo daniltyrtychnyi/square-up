@@ -4,6 +4,7 @@
     --iconWrapperSize: #{fluid(88, 58)};
 
     @include square(var(--iconWrapperSize));
+    @include flex-center;
 
     position: relative;
     flex-shrink: 0;
@@ -20,13 +21,16 @@
     &__image {
         --iconImageSize: #{fluid(40, 26)};
 
-        @include abs-center;
         @include square(var(--iconImageSize));
+
+        &--large {
+            --iconImageSize: #{fluid(85, 45)};
+        }
     }
 
     &--dark {
         --iconWrapperSize: #{rem(54)};
-        
+
         background: var(--color-grey-15);
 
         @include laptop {
@@ -38,5 +42,9 @@
 
             color: var(--color-accent);
         }
+    }
+
+    &--large {
+        --iconWrapperSize: #{fluid(150, 80)};
     }
 }

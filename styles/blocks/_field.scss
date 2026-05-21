@@ -34,7 +34,7 @@
         }
 
         &:user-invalid {
-            border-bottom: rem(1) solid red;
+            border-bottom-color: red;
         }
 
         &:user-valid {

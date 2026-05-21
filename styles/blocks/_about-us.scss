@@ -1,0 +1,58 @@
+@use '../helpers' as *;
+
+.about-us {
+    &__hero {
+        display: flex;
+        align-items: center;
+        column-gap: rem(100);
+        padding: fluid(100, 40) fluid(150, 16);
+        border-block: var(--border);
+
+        @include tablet {
+            flex-direction: column;
+            row-gap: rem(30);
+        }
+
+        @include mobile-s {
+            width: 100vw;
+            margin-inline: calc(var(--container-padding-x) * -1);
+        }
+    }
+
+    &__wrapper {
+        @include mobile-s {
+            width: 100%;
+            max-width: rem(358);
+        }
+    }
+
+    &__title {
+        &:not(:last-child) {
+            margin-bottom: rem(20);
+
+            @include laptop {
+                margin-bottom: rem(16);
+            }
+        }
+    }
+
+    &__description {
+        @include fluid-text(20, 16);
+    }
+
+    &__image {
+        border-radius: rem(16);
+
+        @include laptop {
+            max-width: rem(490);
+        }
+
+        @include tablet {
+            max-width: rem(358);
+        }
+
+        @include mobile {
+            border-radius: rem(12);
+        }
+    }
+}
