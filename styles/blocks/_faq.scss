@@ -1,5 +1,4 @@
 @use '../helpers' as *;
-@use '../blocks/icon-wrapper' as *;
 
 .faq {
     --faqAccordionHeaderColumnGap: #{fluid(30, 20)};
