@@ -8,6 +8,12 @@
     border: var(--border);
     border-radius: rem(12);
 
+    &--hidden-border-mobile {
+        @include mobile-s {
+            border: none;
+        }
+    }
+
     @include laptop {
         padding: rem(10) rem(10) rem(10) rem(20);
     }
@@ -35,20 +41,6 @@
 
         @include hover {
             color: var(--color-light);
-        }
-
-
-
-        &-icon-wrapper {
-            --icon-wrapper-size: #{rem(64)};
-
-            @include laptop {
-                --icon-wrapper-size: #{rem(52)};
-            }
-
-            svg {
-                @include abs-center;
-            }
         }
     }
 }

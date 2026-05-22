@@ -1,0 +1,60 @@
+@use '../helpers' as *;
+
+.contact-us {
+    &__header {
+        display: flex;
+        justify-content: center;
+        padding-block: fluid(50, 30);
+        border-bottom: var(--border);
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-block: var(--border);
+
+        @include mobile {
+            flex-direction: column;
+        }
+    }
+
+    &__schedule {
+        padding-block: rem(50);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: rem(14);
+
+        @include tablet-above {
+            padding-right: rem(80);
+        }
+
+        @include mobile-above {
+            padding-right: rem(40);
+            border-right: var(--border);
+        }
+
+        @include mobile {
+            padding-block: rem(20);
+            width: 100%;
+            border-bottom: var(--border);
+        }
+    }
+
+    &__soc1als {
+        @include tablet-above {
+            margin-left: rem(80);
+        }
+
+        @include tablet {
+            margin-left: rem(40);
+        }
+
+        @include mobile {
+            margin-top: rem(4);
+            margin-left: 0;
+            margin-bottom: rem(24);
+        }
+    }
+}

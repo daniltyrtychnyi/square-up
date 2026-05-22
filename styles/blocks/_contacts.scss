@@ -1,0 +1,79 @@
+@use '../helpers' as *;
+
+.contacts {
+    &__list {
+        @include laptop-above {
+            column-gap: rem(30);
+        }
+
+        @include laptop {
+            column-gap: rem(22);
+        }
+
+        @include mobile-above {
+            display: flex;
+        }
+    }
+
+    &__item {
+        position: relative;
+        padding-bottom: rem(16);
+        text-align: center;
+
+        &:has(.contacts__tag) {
+            border: none;
+        }
+
+        @include laptop {
+            padding-top: 0;
+            padding-bottom: rem(12);
+        }
+
+        @include mobile-above {
+            border-bottom: var(--border);
+        }
+
+        @include mobile {
+            padding-block: rem(20);
+
+            &:has(.contacts__tag) {
+                &::after {
+                    display: none;
+                }
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                translate: -50%;
+                width: calc(100vw + (var(--container-padding-x) * 2) * -1);
+                height: rem(1);
+                background-color: var(--color-grey-15);
+            }
+        }
+    }
+
+    &__link {
+        display: inline-flex;
+        column-gap: rem(10);
+        font-weight: 400;
+
+        svg {
+            color: var(--color-accent);
+        }
+    }
+
+    &__tag {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: rem(14);
+        padding-block: rem(18);
+
+        @include mobile {
+            width: rem(310);
+        }
+    }
+}

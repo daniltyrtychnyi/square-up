@@ -5,6 +5,7 @@
     flex-direction: column;
     row-gap: fluid(50, 30);
     padding: fluid(80, 40) fluid(80, 24);
+    border-top: var(--border);
 
     &__header {
         display: flex;
