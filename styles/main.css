@@ -953,48 +953,58 @@ a[aria-label]::after {
   --iconWrapperSize: clamp(5rem, 3.8848039216rem + 4.5751633987vw, 9.375rem);
 }
 
-.service-card {
+.direction-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  row-gap: clamp(1.5rem, 0.2892156863rem + 4.9673202614vw, 6.25rem);
+  row-gap: clamp(1.5rem, 0.6078431373rem + 3.660130719vw, 5rem);
   padding: clamp(1.875rem, 1.556372549rem + 1.3071895425vw, 3.125rem);
   height: 100%;
 }
-.service-card__main {
+.direction-card--compact {
+  row-gap: 1.875rem;
+}
+@media (width <= 63.99875rem) {
+  .direction-card--compact .direction-card__header {
+    flex-direction: column;
+    align-items: start;
+    row-gap: 1.5rem;
+  }
+}
+.direction-card__main {
   display: flex;
   flex-direction: column;
   align-items: start;
 }
-.service-card__header {
+.direction-card__header {
   display: flex;
   flex-direction: column;
   row-gap: 2.5rem;
 }
 @media (width <= 90.06125rem) {
-  .service-card__header {
+  .direction-card__header {
     row-gap: 1.875rem;
   }
 }
 @media (width <= 63.99875rem) {
-  .service-card__header {
+  .direction-card__header {
     flex-direction: row;
     align-items: center;
     column-gap: 0.875rem;
   }
 }
-.service-card__header:not(:last-child) {
+.direction-card__header:not(:last-child) {
   margin-bottom: 1.25rem;
 }
 @media (width <= 90.06125rem) {
-  .service-card__header:not(:last-child) {
+  .direction-card__header:not(:last-child) {
     margin-bottom: 0.875rem;
   }
 }
-.service-card__link {
+.direction-card__link {
   margin-inline: auto;
 }
-.service-card--services-page {
+.direction-card--services-page {
   row-gap: clamp(1.5rem, 1.4044117647rem + 0.3921568627vw, 1.875rem);
   padding: clamp(1.25rem, 0.7720588235rem + 1.9607843137vw, 3.125rem);
   height: auto;
@@ -1044,6 +1054,9 @@ a[aria-label]::after {
 }
 .section__banner--about-us {
   background-image: url("../images/section-banner_bg/about-us.svg");
+}
+.section__banner--careers {
+  background-image: url("../images/section-banner_bg/careers.svg");
 }
 .section__title:not(:last-child) {
   margin-bottom: clamp(0.375rem, 0.2475490196rem + 0.522875817vw, 0.875rem);
@@ -2078,6 +2091,20 @@ a[aria-label]::after {
     width: 100%;
     max-width: 16.875rem;
   }
+}
+
+.careers-card {
+  padding: clamp(2.5rem, 1.5441176471rem + 3.9215686275vw, 6.25rem) clamp(1.5rem, 1.0857843137rem + 1.6993464052vw, 3.125rem);
+}
+.careers-card__title {
+  font-size: clamp(1.625rem, 1.4019607843rem + 0.9150326797vw, 2.5rem);
+  padding-bottom: clamp(1.25rem, 0.7720588235rem + 1.9607843137vw, 3.125rem);
+  margin-bottom: clamp(1.25rem, 0.7720588235rem + 1.9607843137vw, 3.125rem);
+  border-bottom: var(--border);
+  color: var(--color-accent-80);
+}
+.careers-card__description {
+  color: var(--color-grey-60);
 }
 
 /*# sourceMappingURL=main.css.map */

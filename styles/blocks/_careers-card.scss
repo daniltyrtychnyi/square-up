@@ -1,0 +1,18 @@
+@use '../helpers' as *;
+
+.careers-card {
+    padding: fluid(100, 40) fluid(50, 24);
+
+    &__title {
+        @include fluid-text(40, 26);
+
+        padding-bottom: fluid(50, 20);
+        margin-bottom: fluid(50, 20);
+        border-bottom: var(--border);
+        color: var(--color-accent-80);
+    }
+
+    &__description {
+        color: var(--color-grey-60);
+    }
+}
