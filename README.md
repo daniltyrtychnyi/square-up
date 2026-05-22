@@ -10,7 +10,7 @@
 
 🔗 [Ссылка на макет в Figma](https://www.figma.com/design/ZVqzCg7YDWDjNqqwHwrJY7/Digital-Agency-Company-Website-UI-Design-Template-in-Dark-Theme---FREE-Editable----Community-?t=RxXj3F4osiKQf5od-0)
 
-## 🛠️ Технологии:
+## 🛠️ Технологии
 
 - HTML
 - SASS/SCSS
