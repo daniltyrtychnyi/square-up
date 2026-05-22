@@ -57,7 +57,7 @@ class FormValidation {
 
     onChange(event) {
         const { target } = event
-        const isToggleType = ['radio', 'checkbxo'].includes(target.type)
+        const isToggleType = ['radio', 'checkbox'].includes(target.type)
         const isRequired = target.required
 
         if (isRequired && isToggleType) {

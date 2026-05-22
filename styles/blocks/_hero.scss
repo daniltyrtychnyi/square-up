@@ -76,8 +76,6 @@
         }
 
         &-text {
-            @include fluid-text(22, 16);
-
             color: var(--color-grey-60);
         }
 

@@ -750,7 +750,6 @@ a[aria-label]::after {
   }
 }
 .hero__tags-text {
-  font-size: clamp(1rem, 0.9044117647rem + 0.3921568627vw, 1.375rem);
   color: var(--color-grey-60);
 }
 .hero__tags:not(:last-child) {
