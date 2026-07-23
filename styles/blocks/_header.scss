@@ -4,15 +4,17 @@
     position: sticky;
     top: 0;
     z-index: 100;
+    padding-block: rem(20);
     background-color: var(--color-grey-10);
     border-bottom: var(--border);
     animation-name: scrolling-header;
     animation-fill-mode: both;
-    animation-timeline: scroll(y);
-    animation-range: rem(100) rem(200);
+    animation-timeline: scroll();
+    animation-range: 0 rem(100);
 
     @keyframes scrolling-header {
         to {
+            padding-block: rem(10);
             box-shadow: 0 0 1rem var(--color-light);
         }
     }
@@ -22,11 +24,6 @@
         justify-content: space-between;
         align-items: center;
         column-gap: rem(10);
-        padding-block: rem(20);
-
-        @include mobile {
-            padding-top: rem(40);
-        }
     }
 
     &__overlay {

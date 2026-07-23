@@ -53,7 +53,8 @@
         cursor: pointer;
 
         @include hover {
-            .faq__accordion-header {
+            .faq__accordion-header,
+            .faq__accordion-title {
                 color: var(--color-accent-70);
             }
 
@@ -71,8 +72,7 @@
             padding-inline: rem(24);
         }
 
-        &[open] {
-
+        &-details[open] {
             .faq__accordion-header,
             .faq__accordion-title {
                 color: var(--color-accent-70);
@@ -95,6 +95,10 @@
 
             .faq__accordion-indicator::after {
                 rotate: 45deg;
+            }
+
+            & + .faq__accordion-content {
+                grid-template-rows: 1fr;
             }
         }
 
@@ -152,13 +156,21 @@
             }
         }
 
-        &-body {
-            --iconWrapperOffsetX: #{fluid(88, 58)};
+        &-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition-duration: 0.3s;
 
-            transition-duration: 0.5s;
+            &-inner {
+                overflow: hidden;
+            }
 
-            @include tablet-above {
-                margin-left: calc(var(--faqAccordionHeaderColumnGap) + var(--iconWrapperOffsetX));
+            &-body {
+                --iconWrapperOffsetX: #{fluid(88, 58)};
+
+                @include tablet-above {
+                    margin-left: calc(var(--faqAccordionHeaderColumnGap) + var(--iconWrapperOffsetX));
+                }
             }
         }
     }

@@ -13,10 +13,6 @@
             row-gap: rem(30);
         }
 
-        @include mobile-s {
-            width: 100vw;
-            margin-inline: calc(var(--container-padding-x) * -1);
-        }
     }
 
     &__wrapper {
@@ -53,6 +49,10 @@
 
         @include mobile {
             border-radius: rem(12);
+        }
+
+        @include mobile-s {
+            max-width: rem(300);
         }
     }
 }

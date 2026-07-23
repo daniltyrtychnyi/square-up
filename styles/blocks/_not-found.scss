@@ -1,0 +1,11 @@
+@use '../helpers' as *;
+
+.not-found {
+  &__inner {
+    @include flex-center;
+
+    flex-direction: column;
+    row-gap: rem(30);
+    height: 100vh;
+  }
+}

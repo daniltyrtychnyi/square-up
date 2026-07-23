@@ -278,7 +278,6 @@ body {
   font-size: clamp(0.875rem, 0.8112745098rem + 0.2614379085vw, 1.125rem);
   font-family: var(--font-family-base);
   font-weight: 400;
-  line-height: 1.5;
   letter-spacing: -0.01em;
   color: var(--color-grey-90);
   background-color: var(--color-grey-10);
@@ -554,15 +553,17 @@ a[aria-label]::after {
   position: sticky;
   top: 0;
   z-index: 100;
+  padding-block: 1.25rem;
   background-color: var(--color-grey-10);
   border-bottom: var(--border);
   animation-name: scrolling-header;
   animation-fill-mode: both;
-  animation-timeline: scroll(y);
-  animation-range: 6.25rem 12.5rem;
+  animation-timeline: scroll();
+  animation-range: 0 6.25rem;
 }
 @keyframes scrolling-header {
   to {
+    padding-block: 0.625rem;
     box-shadow: 0 0 1rem var(--color-light);
   }
 }
@@ -571,12 +572,6 @@ a[aria-label]::after {
   justify-content: space-between;
   align-items: center;
   column-gap: 0.625rem;
-  padding-block: 1.25rem;
-}
-@media (width <= 47.99875rem) {
-  .header__inner {
-    padding-top: 2.5rem;
-  }
 }
 @media (width > 47.99875rem) {
   .header__overlay {
@@ -915,7 +910,6 @@ a[aria-label]::after {
   align-items: center;
   position: relative;
   flex-shrink: 0;
-  padding: clamp(1rem, 0.8725490196rem + 0.522875817vw, 1.5rem);
   background: var(--gradient);
   border-radius: var(--border-radius);
 }
@@ -1226,7 +1220,8 @@ a[aria-label]::after {
   cursor: pointer;
 }
 @media (any-hover: hover) {
-  .faq__accordion:hover .faq__accordion-header {
+  .faq__accordion:hover .faq__accordion-header,
+  .faq__accordion:hover .faq__accordion-title {
     color: var(--color-accent-70);
   }
   .faq__accordion:hover .faq__accordion-indicator::before,
@@ -1235,7 +1230,8 @@ a[aria-label]::after {
   }
 }
 @media (any-hover: none) {
-  .faq__accordion::active .faq__accordion-header {
+  .faq__accordion::active .faq__accordion-header,
+  .faq__accordion::active .faq__accordion-title {
     color: var(--color-accent-70);
   }
   .faq__accordion::active .faq__accordion-indicator::before,
@@ -1253,24 +1249,27 @@ a[aria-label]::after {
     padding-inline: 1.5rem;
   }
 }
-.faq__accordion[open] .faq__accordion-header,
-.faq__accordion[open] .faq__accordion-title {
+.faq__accordion-details[open] .faq__accordion-header,
+.faq__accordion-details[open] .faq__accordion-title {
   color: var(--color-accent-70);
 }
 @media (width <= 47.99875rem) {
-  .faq__accordion[open] .faq__accordion-header {
+  .faq__accordion-details[open] .faq__accordion-header {
     margin-bottom: 1.5rem;
   }
 }
-.faq__accordion[open] .faq__accordion-indicator::before,
-.faq__accordion[open] .faq__accordion-indicator::after {
+.faq__accordion-details[open] .faq__accordion-indicator::before,
+.faq__accordion-details[open] .faq__accordion-indicator::after {
   background-color: var(--color-accent-70);
 }
-.faq__accordion[open] .faq__accordion-indicator::before {
+.faq__accordion-details[open] .faq__accordion-indicator::before {
   rotate: -45deg;
 }
-.faq__accordion[open] .faq__accordion-indicator::after {
+.faq__accordion-details[open] .faq__accordion-indicator::after {
   rotate: 45deg;
+}
+.faq__accordion-details[open] + .faq__accordion-content {
+  grid-template-rows: 1fr;
 }
 .faq__accordion-header {
   display: flex;
@@ -1324,12 +1323,19 @@ a[aria-label]::after {
 .faq__accordion-indicator::after {
   rotate: 90deg;
 }
-.faq__accordion-body {
+.faq__accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition-duration: 0.3s;
+}
+.faq__accordion-content-inner {
+  overflow: hidden;
+}
+.faq__accordion-content-body {
   --iconWrapperOffsetX: clamp(3.625rem, 3.1470588235rem + 1.9607843137vw, 5.5rem);
-  transition-duration: 0.5s;
 }
 @media (width > 63.99875rem) {
-  .faq__accordion-body {
+  .faq__accordion-content-body {
     margin-left: calc(var(--faqAccordionHeaderColumnGap) + var(--iconWrapperOffsetX));
   }
 }
@@ -1986,12 +1992,6 @@ a[aria-label]::after {
   }
 }
 @media (width <= 30.06125rem) {
-  .about-us__hero {
-    width: 100vw;
-    margin-inline: calc(var(--container-padding-x) * -1);
-  }
-}
-@media (width <= 30.06125rem) {
   .about-us__wrapper {
     width: 100%;
     max-width: 22.375rem;
@@ -2024,6 +2024,11 @@ a[aria-label]::after {
 @media (width <= 47.99875rem) {
   .about-us__image {
     border-radius: 0.75rem;
+  }
+}
+@media (width <= 30.06125rem) {
+  .about-us__image {
+    max-width: 18.75rem;
   }
 }
 
@@ -2186,6 +2191,15 @@ a[aria-label]::after {
     margin-left: 0;
     margin-bottom: 1.5rem;
   }
+}
+
+.not-found__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 1.875rem;
+  height: 100vh;
 }
 
 /*# sourceMappingURL=main.css.map */
