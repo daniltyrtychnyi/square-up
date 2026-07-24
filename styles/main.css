@@ -1033,34 +1033,34 @@ a[aria-label]::after {
   }
 }
 .section__banner--services {
-  background-image: url("../images/section-banner_bg/services.svg");
+  background-image: url("../images/section-banner_bg/services.png");
 }
 .section__banner--advantages {
-  background-image: url("../images/section-banner_bg/advantages.svg");
+  background-image: url("../images/section-banner_bg/advantages.png");
 }
 .section__banner--review {
-  background-image: url("../images/section-banner_bg/about-us.svg");
+  background-image: url("../images/section-banner_bg/about-us.png");
 }
 .section__banner--faq {
-  background-image: url("../images/section-banner_bg/faq.svg");
+  background-image: url("../images/section-banner_bg/faq.png");
 }
 .section__banner--form {
-  background-image: url("../images/section-banner_bg/form.svg");
+  background-image: url("../images/section-banner_bg/form.png");
 }
 .section__banner--work {
-  background-image: url("../images/section-banner_bg/work.svg");
+  background-image: url("../images/section-banner_bg/work.png");
 }
 .section__banner--process {
-  background-image: url("../images/section-banner_bg/process.svg");
+  background-image: url("../images/section-banner_bg/process.png");
 }
 .section__banner--about-us {
-  background-image: url("../images/section-banner_bg/about-us.svg");
+  background-image: url("../images/section-banner_bg/about-us.png");
 }
 .section__banner--careers {
-  background-image: url("../images/section-banner_bg/careers.svg");
+  background-image: url("../images/section-banner_bg/careers.png");
 }
 .section__banner--contact-us {
-  background-image: url("../images/section-banner_bg/contact-us.svg");
+  background-image: url("../images/section-banner_bg/contact-us.png");
 }
 .section__title:not(:last-child) {
   margin-bottom: clamp(0.375rem, 0.2475490196rem + 0.522875817vw, 0.875rem);
