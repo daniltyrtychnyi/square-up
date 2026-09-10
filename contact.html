@@ -4,17 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+            name="description"
+            content="Contact SquareUp to discuss your digital project, ask questions, or learn more about our design, engineering, and project management services."
+    >
+    <link rel="canonical" href="https://daniltyrtychnyi.github.io/square-up/contact.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SquareUp | Contact">
+    <meta
+            property="og:description"
+            content="Contact SquareUp to discuss your digital project, ask questions, or learn more about our design, engineering, and project management services."
+    >
+    <meta property="og:url" content="https://daniltyrtychnyi.github.io/square-up/contact.html">
+    <meta
+            property="og:image"
+            content="https://daniltyrtychnyi.github.io/square-up/images/og-image.png"
+    >
     <title>SquareUp | Contact</title>
     <link rel="stylesheet" href="./styles/main.css">
-    <link rel="shortcut icon" href="icons/favicon-32x32.png" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
     <script src="./scripts/main.js" type="module"></script>
 </head>
 
 <body>
     <header class="header" data-js-header>
         <div class="header__inner container">
-            <a href="./index.html" class="header__logo logo">
-                <img src="./images/logo.svg" alt="SquareUp logo" class="logo__image" width="178" height="60">
+            <a href="./index.html" class="header__logo logo" aria-label="Home" title="Home">
+                <img src="./images/logo.svg" alt="" class="logo__image" width="178" height="60">
             </a>
             <div class="header__overlay" data-js-header-overlay>
                 <nav class="header__menu">
@@ -50,7 +68,7 @@
         </div>
     </header>
     <main>
-        <section class="section" aria-labelledby="contact-us-title">
+        <section class="section" aria-labelledby="contact-us-title" id="contact-us">
             <div class="section__inner container">
                 <div class="section__banner section__banner--contact-us">
                     <div class="section__banner-info">
@@ -95,7 +113,7 @@
                                     </a>
                                 </li>
                                 <li class="contacts__item">
-                                    <a href="" class="contacts__link">
+                                    <a href="./404.html" class="contacts__link">
                                         <span class="contacts__tag tag">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -110,28 +128,29 @@
                             </ul>
                         </header>
                         <div class="feedback container-medium">
-                            <form id="contactForm" action="/" class="feedback__form" novalidate data-js-contact-form>
+                            <form id="contactForm" class="feedback__form" novalidate data-js-contact-form>
                                 <div class="feedback__form-top grid grid--2">
                                     <div class="feedback__form-cell feedback__form-cell--small field">
                                         <label for="name" class="field__label">Full Name</label>
                                         <input id="name" name="name" type="text" class="field__input"
-                                            placeholder="Type here" autocomplete="off" required minlength="5"
-                                            maxlength="40" pattern="^[A-Za-zА-Яа-яЁё]+\s[A-Za-zА-Яа-яЁё]+$"
-                                            title="Use only letters" aria-errormessage="name-errors">
+                                               placeholder="Ivan Ivanov" autocomplete="name" required minlength="5"
+                                               maxlength="40"
+                                               pattern="^[A-Za-zА-Яа-яЁё]+\s[A-Za-zА-Яа-яЁё]+$"
+                                               title="Use only letters" aria-errormessage="name-errors">
                                         <span class="field__input-line"></span>
-                                        <span id="name-errors" class="field__errors"
-                                            data-js-contact-form-field-errors></span>
+                                        <span id="name-errors" class="field__errors" aria-live="polite" role="alert"
+                                              data-js-contact-form-field-errors></span>
                                     </div>
                                     <div class="feedback__form-cell feedback__form-cell--small field">
                                         <label for="email" class="field__label">Email</label>
                                         <input id="email" name="email" type="email" class="field__input"
-                                            placeholder="Type here" autocomplete="off" required minlength="3"
-                                            maxlength="254" pattern="[^@]+@[^@]+\.[^@]+"
-                                            title="Enter the correct email (example: name@domain.ru )"
-                                            aria-errormessage="email-errors">
+                                               placeholder="example@example.com" autocomplete="email" required minlength="3"
+                                               maxlength="254" pattern="[^@]+@[^@]+\.[^@]+"
+                                               title="Enter the correct email (example: example@example.com)"
+                                               aria-errormessage="email-errors">
                                         <span class="field__input-line"></span>
-                                        <span id="email-errors" class="field__errors"
-                                            data-js-contact-form-field-errors></span>
+                                        <span id="email-errors" class="field__errors" aria-live="polite" role="alert"
+                                              data-js-contact-form-field-errors></span>
                                     </div>
                                 </div>
                                 <fieldset class="feedback__form-cell">
@@ -141,62 +160,66 @@
                                         <li class="checkbox__item">
                                             <label class="checkbox__wrapper">
                                                 <input name="contact-reason" type="radio" class="checkbox__input"
-                                                    value="Web Design" checked required
-                                                    aria-errormessage="contact-reason-errors">
+                                                       value="Web Design" checked required
+                                                       aria-errormessage="contact-reason-errors">
                                                 <span class="checkbox__label">Web Design</span>
                                             </label>
                                         </li>
                                         <li class="checkbox__item">
                                             <label class="checkbox__wrapper">
                                                 <input name="contact-reason" type="radio" class="checkbox__input"
-                                                    value="Collaboration" aria-errormessage="contact-reason-errors">
+                                                       value="Collaboration" aria-errormessage="contact-reason-errors">
                                                 <span class="checkbox__label">Collaboration</span>
                                             </label>
                                         </li>
                                         <li class="checkbox__item">
                                             <label class="checkbox__wrapper">
                                                 <input name="contact-reason" type="radio" class="checkbox__input"
-                                                    value="Mobile App Design" aria-errormessage="contact-reason-errors">
+                                                       value="Mobile App Design" aria-errormessage="contact-reason-errors">
                                                 <span class="checkbox__label">Mobile App Design</span>
                                             </label>
                                         </li>
                                         <li class="checkbox__item">
                                             <label class="checkbox__wrapper">
                                                 <input name="contact-reason" type="radio" class="checkbox__input"
-                                                    value="Others" aria-errormessage="contact-reason-errors">
+                                                       value="Others" aria-errormessage="contact-reason-errors">
                                                 <span class="checkbox__label">Others</span>
                                             </label>
                                         </li>
                                     </ul>
-                                    <span id="contact-reason-errors" class="field__errors"
-                                        data-js-contact-form-field-errors></span>
+                                    <span id="contact-reason-errors" class="field__errors" aria-live="polite" role="alert"
+                                          data-js-contact-form-field-errors></span>
                                 </fieldset>
                                 <div class="feedback__form-cell">
-                                    <span class="feedback__form-cell-label feedback__form-cell-label--budget">Your
-                                        Budget</span>
+                                <span class="feedback__form-cell-label feedback__form-cell-label--budget">Your
+                                    Budget</span>
                                     <p class="feedback__form-cell-description">Slide to indicate your budget range</p>
                                     <div class="range-slider" data-js-range-slider>
                                         <span class="range-slider__track" data-js-range-slider-track></span>
-                                        <input name="min_price" type="range" class="range-slider__input" min="0"
-                                            max="10000" value="1000" data-js-range-slider-min-value>
-                                        <input name="max_price" type="range" class="range-slider__input" min="0"
-                                            max="10000" value="5000" data-js-range-slider-max-value>
+                                        <label for="rangeMin" class="visually-hidden">Minimum budget</label>
+                                        <input id="rangeMin" name="min_price" type="range" class="range-slider__input" min="0"
+                                               max="10000"
+                                               value="1000" data-js-range-slider-min-value>
+                                        <label for="rangeMax" class="visually-hidden">Maximum budget</label>
+                                        <input id="rangeMax" name="max_price" type="range" class="range-slider__input" min="0"
+                                               max="10000"
+                                               value="5000" data-js-range-slider-max-value>
                                         <div class="range-slider__tooltip range-slider__tooltip--min"
-                                            data-js-range-slider-tooltip-min></div>
+                                             aria-hidden="true" data-js-range-slider-tooltip-min></div>
                                         <div class="range-slider__tooltip range-slider__tooltip--max"
-                                            data-js-range-slider-tooltip-max></div>
+                                             aria-hidden="true" data-js-range-slider-tooltip-max></div>
                                     </div>
                                 </div>
                                 <div class="feedback__form-cell field">
                                     <label for="message" class="field__label">Your Message</label>
                                     <textarea name="message" id="message" class="field__input field__input--textarea"
-                                        placeholder="Type here" required minlength="10" maxlength="500"
-                                        aria-errormessage="message-errors"></textarea>
+                                              placeholder="I have a suggestion..." required minlength="10" maxlength="500"
+                                              aria-errormessage="message-errors"></textarea>
                                     <span class="field__input-line"></span>
-                                    <span id="message-errors" class="field__errors"
-                                        data-js-contact-form-field-errors></span>
+                                    <span id="message-errors" class="field__errors" aria-live="polite" role="alert"
+                                          data-js-contact-form-field-errors></span>
                                 </div>
-                                <button class="feedback__form-button button" type="submit">Submit</button>
+                                <button class="feedback__form-button button" type="submit" data-js-contact-form-submit-button>Submit</button>
                             </form>
                         </div>
                     </div>
@@ -286,12 +309,12 @@
                                         <summary class="faq__accordion-header">
                                             <span class="faq__accordion-icon-wrapper icon-wrapper"></span>
                                             <h3 class="faq__accordion-title h5">
-                                                <span role="term" aria-details="faq-1">What services does SquareUp provide?</span>
+                                                What services does SquareUp provide?
                                             </h3>
                                             <span class="faq__accordion-indicator"></span>
                                         </summary>
                                     </details>
-                                    <div class="faq__accordion-content" role="definition" id="faq-1">
+                                    <div class="faq__accordion-content">
                                         <div class="faq__accordion-content-inner">
                                             <div class="faq__accordion-content-body">
                                                 <p>SquareUp offers a range of services including design, engineering,
@@ -307,16 +330,16 @@
                             </li>
                             <li class="faq__item">
                                 <div class="faq__accordion">
-                                    <details class="faq__accordion-details" name="faq" open>
+                                    <details class="faq__accordion-details" name="faq">
                                         <summary class="faq__accordion-header">
                                             <span class="faq__accordion-icon-wrapper icon-wrapper"></span>
                                             <h3 class="faq__accordion-title h5">
-                                                <span role="term" aria-details="faq-2">How can SquareUp help my business?</span>
+                                                How can SquareUp help my business?
                                             </h3>
                                             <span class="faq__accordion-indicator"></span>
                                         </summary>
                                     </details>
-                                    <div class="faq__accordion-content" role="definition" id="faq-2">
+                                    <div class="faq__accordion-content">
                                         <div class="faq__accordion-content-inner">
                                             <div class="faq__accordion-content-body">
                                                 <p>SquareUp offers a range of services including design, engineering,
@@ -332,16 +355,16 @@
                             </li>
                             <li class="faq__item">
                                 <div class="faq__accordion">
-                                    <details class="faq__accordion-details" name="faq" open>
+                                    <details class="faq__accordion-details" name="faq">
                                         <summary class="faq__accordion-header">
                                             <span class="faq__accordion-icon-wrapper icon-wrapper"></span>
                                             <h3 class="faq__accordion-title h5">
-                                                <span role="term" aria-details="faq-3">What industries does SquareUp work with?</span>
+                                                What industries does SquareUp work with?
                                             </h3>
                                             <span class="faq__accordion-indicator"></span>
                                         </summary>
                                     </details>
-                                    <div class="faq__accordion-content" role="definition" id="faq-3">
+                                    <div class="faq__accordion-content">
                                         <div class="faq__accordion-content-inner">
                                             <div class="faq__accordion-content-body">
                                                 <p>SquareUp offers a range of services including design, engineering,
@@ -357,16 +380,16 @@
                             </li>
                             <li class="faq__item">
                                 <div class="faq__accordion">
-                                    <details class="faq__accordion-details" name="faq" open>
+                                    <details class="faq__accordion-details" name="faq">
                                         <summary class="faq__accordion-header">
                                             <span class="faq__accordion-icon-wrapper icon-wrapper"></span>
                                             <h3 class="faq__accordion-title h5">
-                                                <span role="term" aria-details="faq-4">How long does it take to complete a project with SquareUp?</span>
+                                                How long does it take to complete a project with SquareUp?
                                             </h3>
                                             <span class="faq__accordion-indicator"></span>
                                         </summary>
                                     </details>
-                                    <div class="faq__accordion-content" role="definition" id="faq-4">
+                                    <div class="faq__accordion-content">
                                         <div class="faq__accordion-content-inner">
                                             <div class="faq__accordion-content-body">
                                                 <p>SquareUp offers a range of services including design, engineering,
@@ -382,16 +405,16 @@
                             </li>
                             <li class="faq__item">
                                 <div class="faq__accordion">
-                                    <details class="faq__accordion-details" name="faq" open>
+                                    <details class="faq__accordion-details" name="faq">
                                         <summary class="faq__accordion-header">
                                             <span class="faq__accordion-icon-wrapper icon-wrapper"></span>
                                             <h3 class="faq__accordion-title h5">
-                                                <span role="term" aria-details="faq-5">Do you offer ongoing support and maintenance after the project is completed?</span>
+                                                Do you offer ongoing support and maintenance after the project is completed?
                                             </h3>
                                             <span class="faq__accordion-indicator"></span>
                                         </summary>
                                     </details>
-                                    <div class="faq__accordion-content" role="definition" id="faq-5">
+                                    <div class="faq__accordion-content">
                                         <div class="faq__accordion-content-inner">
                                             <div class="faq__accordion-content-body">
                                                 <p>SquareUp offers a range of services including design, engineering,
@@ -407,16 +430,16 @@
                             </li>
                             <li class="faq__item">
                                 <div class="faq__accordion">
-                                    <details class="faq__accordion-details" name="faq" open>
+                                    <details class="faq__accordion-details" name="faq">
                                         <summary class="faq__accordion-header">
                                             <span class="faq__accordion-icon-wrapper icon-wrapper"></span>
                                             <h3 class="faq__accordion-title h5">
-                                                <span role="term" aria-details="faq-6">Can you work with existing design or development frameworks?</span>
+                                                Can you work with existing design or development frameworks?
                                             </h3>
                                             <span class="faq__accordion-indicator"></span>
                                         </summary>
                                     </details>
-                                    <div class="faq__accordion-content" role="definition" id="faq-6">
+                                    <div class="faq__accordion-content">
                                         <div class="faq__accordion-content-inner">
                                             <div class="faq__accordion-content-body">
                                                 <p>SquareUp offers a range of services including design, engineering,
@@ -432,16 +455,16 @@
                             </li>
                             <li class="faq__item">
                                 <div class="faq__accordion">
-                                    <details class="faq__accordion-details" name="faq" open>
+                                    <details class="faq__accordion-details" name="faq">
                                         <summary class="faq__accordion-header">
                                             <span class="faq__accordion-icon-wrapper icon-wrapper"></span>
                                             <h3 class="faq__accordion-title h5">
-                                                <span role="term" aria-details="faq-7">How involved will I be in the project development process?</span>
+                                                How involved will I be in the project development process?
                                             </h3>
                                             <span class="faq__accordion-indicator"></span>
                                         </summary>
                                     </details>
-                                    <div class="faq__accordion-content" role="definition" id="faq-7">
+                                    <div class="faq__accordion-content">
                                         <div class="faq__accordion-content-inner">
                                             <div class="faq__accordion-content-body">
                                                 <p>SquareUp offers a range of services including design, engineering,
@@ -457,16 +480,16 @@
                             </li>
                             <li class="faq__item">
                                 <div class="faq__accordion">
-                                    <details class="faq__accordion-details" name="faq" open>
+                                    <details class="faq__accordion-details" name="faq">
                                         <summary class="faq__accordion-header">
                                             <span class="faq__accordion-icon-wrapper icon-wrapper"></span>
                                             <h3 class="faq__accordion-title h5">
-                                                <span role="term" aria-details="faq-8">Can you help with website or app maintenance and updates?</span>
+                                                Can you help with website or app maintenance and updates?
                                             </h3>
                                             <span class="faq__accordion-indicator"></span>
                                         </summary>
                                     </details>
-                                    <div class="faq__accordion-content" role="definition" id="faq-8">
+                                    <div class="faq__accordion-content">
                                         <div class="faq__accordion-content-inner">
                                             <div class="faq__accordion-content-body">
                                                 <p>SquareUp offers a range of services including design, engineering,
@@ -507,7 +530,7 @@
                             <span class="company-intro__tag tag">Where collaboration, Expertise, and
                                 Client-Centricity
                                 Intersect to Shape the Future of Digital Innovation.</span>
-                            <a href="./404.html" class="company-intro__link button">Start Project</a>
+                            <a href="#contact-us" class="company-intro__link button">Start Project</a>
                         </div>
                     </div>
                 </div>
@@ -517,8 +540,8 @@
     <footer class="footer">
         <div class="footer__inner container">
             <div class="footer__main">
-                <a href="./index.html" class="footer__logo logo">
-                    <img src="./images/logo.svg" alt="SquareUp logo" class="logo__image" width="178" height="60"
+                <a href="./index.html" class="footer__logo logo" aria-label="Home" title="Home">
+                    <img src="./images/logo.svg" alt="" class="logo__image" width="178" height="60"
                         loading="lazy">
                 </a>
                 <nav class="footer__menu">
@@ -581,7 +604,7 @@
                             </a>
                         </li>
                         <li class="soc1als__item">
-                            <a href="./404.html" class="soc1als__link" aria-label="Facebook">
+                            <a href="./404.html" class="soc1als__link" aria-label="LinkedIn">
                                 <span class="soc1als__link-icon-wrapper icon-wrapper icon-wrapper--medium">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -603,38 +626,41 @@
                 </div>
             </div>
             <div class="footer__extra contacts">
-                <ul class="contacts__list">
-                    <li class="contacts__item">
+                <div class="contacts__list">
+                    <div class="contacts__item">
                         <a href="mailto:hello@squareup.com" class="contacts__link">
-                            <span class="contacts__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
+                            <span class="contacts__icon"><svg width="24" height="24" viewBox="0 0 24 24"
+                                                              fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M1.5 8.6691V17.25C1.5 18.9069 2.84315 20.25 4.5 20.25H19.5C21.1569 20.25 22.5 18.9069 22.5 17.25V8.6691L13.5723 14.1631C12.6081 14.7564 11.3919 14.7564 10.4277 14.1631L1.5 8.6691Z"
-                                        fill="#9EFF00" />
+                                            d="M1.5 8.6691V17.25C1.5 18.9069 2.84315 20.25 4.5 20.25H19.5C21.1569 20.25 22.5 18.9069 22.5 17.25V8.6691L13.5723 14.1631C12.6081 14.7564 11.3919 14.7564 10.4277 14.1631L1.5 8.6691Z"
+                                            fill="#9EFF00"/>
                                     <path
-                                        d="M22.5 6.90783V6.75C22.5 5.09315 21.1569 3.75 19.5 3.75H4.5C2.84315 3.75 1.5 5.09315 1.5 6.75V6.90783L11.2139 12.8856C11.696 13.1823 12.304 13.1823 12.7861 12.8856L22.5 6.90783Z"
-                                        fill="#9EFF00" />
+                                            d="M22.5 6.90783V6.75C22.5 5.09315 21.1569 3.75 19.5 3.75H4.5C2.84315 3.75 1.5 5.09315 1.5 6.75V6.90783L11.2139 12.8856C11.696 13.1823 12.304 13.1823 12.7861 12.8856L22.5 6.90783Z"
+                                            fill="#9EFF00"/>
                                 </svg></span>hello@squareup.com</a>
-                    </li>
-                    <li class="contacts__item">
+                    </div>
+                    <div class="contacts__item">
                         <a href="tel:+9191813232309" class="contacts__link">
-                            <span class="contacts__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
+                            <span class="contacts__icon"><svg width="24" height="24" viewBox="0 0 24 24"
+                                                              fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M1.5 4.5C1.5 2.84315 2.84315 1.5 4.5 1.5H5.87163C6.732 1.5 7.48197 2.08556 7.69064 2.92025L8.79644 7.34343C8.97941 8.0753 8.70594 8.84555 8.10242 9.29818L6.8088 10.2684C6.67447 10.3691 6.64527 10.5167 6.683 10.6197C7.81851 13.7195 10.2805 16.1815 13.3803 17.317C13.4833 17.3547 13.6309 17.3255 13.7316 17.1912L14.7018 15.8976C15.1545 15.2941 15.9247 15.0206 16.6566 15.2036L21.0798 16.3094C21.9144 16.518 22.5 17.268 22.5 18.1284V19.5C22.5 21.1569 21.1569 22.5 19.5 22.5H17.25C8.55151 22.5 1.5 15.4485 1.5 6.75V4.5Z"
-                                        fill="#9EFF00" />
+                                          d="M1.5 4.5C1.5 2.84315 2.84315 1.5 4.5 1.5H5.87163C6.732 1.5 7.48197 2.08556 7.69064 2.92025L8.79644 7.34343C8.97941 8.0753 8.70594 8.84555 8.10242 9.29818L6.8088 10.2684C6.67447 10.3691 6.64527 10.5167 6.683 10.6197C7.81851 13.7195 10.2805 16.1815 13.3803 17.317C13.4833 17.3547 13.6309 17.3255 13.7316 17.1912L14.7018 15.8976C15.1545 15.2941 15.9247 15.0206 16.6566 15.2036L21.0798 16.3094C21.9144 16.518 22.5 17.268 22.5 18.1284V19.5C22.5 21.1569 21.1569 22.5 19.5 22.5H17.25C8.55151 22.5 1.5 15.4485 1.5 6.75V4.5Z"
+                                          fill="#9EFF00"/>
                                 </svg></span>+91 91813 23 2309</a>
-                    </li>
-                    <li class="contacts__item">
-                        <a href="" class="contacts__link">
-                            <span class="contacts__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
+                    </div>
+                    <div class="contacts__item">
+                        <address class="contacts__address">
+                            <span class="contacts__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M11.5397 22.351C11.57 22.3685 11.5937 22.3821 11.6105 22.3915L11.6384 22.4071C11.8613 22.5294 12.1378 22.5285 12.3608 22.4075L12.3895 22.3915C12.4063 22.3821 12.43 22.3685 12.4603 22.351C12.5207 22.316 12.607 22.265 12.7155 22.1982C12.9325 22.0646 13.2388 21.8676 13.6046 21.6091C14.3351 21.0931 15.3097 20.3274 16.2865 19.3273C18.2307 17.3368 20.25 14.3462 20.25 10.5C20.25 5.94365 16.5563 2.25 12 2.25C7.44365 2.25 3.75 5.94365 3.75 10.5C3.75 14.3462 5.76932 17.3368 7.71346 19.3273C8.69025 20.3274 9.66491 21.0931 10.3954 21.6091C10.7612 21.8676 11.0675 22.0646 11.2845 22.1982C11.393 22.265 11.4793 22.316 11.5397 22.351ZM12 13.5C13.6569 13.5 15 12.1569 15 10.5C15 8.84315 13.6569 7.5 12 7.5C10.3431 7.5 9 8.84315 9 10.5C9 12.1569 10.3431 13.5 12 13.5Z"
-                                        fill="#9EFF00" />
-                                </svg></span>Somewhere in the World</a>
-                    </li>
-                </ul>
+                                          d="M11.5397 22.351C11.57 22.3685 11.5937 22.3821 11.6105 22.3915L11.6384 22.4071C11.8613 22.5294 12.1378 22.5285 12.3608 22.4075L12.3895 22.3915C12.4063 22.3821 12.43 22.3685 12.4603 22.351C12.5207 22.316 12.607 22.265 12.7155 22.1982C12.9325 22.0646 13.2388 21.8676 13.6046 21.6091C14.3351 21.0931 15.3097 20.3274 16.2865 19.3273C18.2307 17.3368 20.25 14.3462 20.25 10.5C20.25 5.94365 16.5563 2.25 12 2.25C7.44365 2.25 3.75 5.94365 3.75 10.5C3.75 14.3462 5.76932 17.3368 7.71346 19.3273C8.69025 20.3274 9.66491 21.0931 10.3954 21.6091C10.7612 21.8676 11.0675 22.0646 11.2845 22.1982C11.393 22.265 11.4793 22.316 11.5397 22.351ZM12 13.5C13.6569 13.5 15 12.1569 15 10.5C15 8.84315 13.6569 7.5 12 7.5C10.3431 7.5 9 8.84315 9 10.5C9 12.1569 10.3431 13.5 12 13.5Z"
+                                          fill="#9EFF00"/>
+                                </svg>
+                            </span>Somewhere in the World
+                        </address>
+                    </div>
+                </div>
                 <div class="footer__extra-copyright">
                     &copy; <time datetime="2023">2023</time> SquareUp. All rights reserved.
                 </div>

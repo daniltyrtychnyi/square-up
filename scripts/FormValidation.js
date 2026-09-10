@@ -2,6 +2,7 @@ class FormValidation {
     selectors = {
         form: '[data-js-contact-form]',
         fieldErrors: '[data-js-contact-form-field-errors]',
+        submitButton: '[data-js-contact-form-submit-button]',
     }
 
     errorMessages = {
@@ -11,7 +12,13 @@ class FormValidation {
         tooLong: ({ maxLength }) => `The value is too long, the characters are limited - ${maxLength}`,
     }
 
+    delaySubmit = 2000
+
+    submitButtonDefaultText = 'Submit'
+
     constructor() {
+        this.formElement = document.querySelector(this.selectors.form)
+        this.submitButtonElement = this.formElement.querySelector(this.selectors.submitButton)
         this.bindEvents()
     }
 
@@ -43,6 +50,11 @@ class FormValidation {
         fieldInputElement.ariaInvalid = !isValid
 
         return isValid
+    }
+
+    resetForm() {
+        this.formElement.reset()
+        this.submitButtonElement.textContent = this.submitButtonDefaultText
     }
 
     onFocusOut(event) {
@@ -91,7 +103,17 @@ class FormValidation {
         if (!isFormValid) {
             event.preventDefault()
             firstValidFieldControl.focus()
+
+            return
         }
+
+        event.preventDefault()
+
+        this.submitButtonElement.textContent = 'Message Sent!'
+
+        this.submitTimeout = setTimeout(() => {
+            this.resetForm()
+        }, this.delaySubmit)
     }
 
     bindEvents() {

@@ -63,7 +63,7 @@ $mobile-s: 480.98;
 
     @if ($hasActiveEffectOnMobile) {
         @media (any-hover: none) {
-            &::active {
+            &:active {
                 @content;
             }
         }

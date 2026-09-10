@@ -16,7 +16,7 @@
         -webkit-appearance: none;
         appearance: none;
         border-radius: 0;
-        box-shadow: 0;
+        box-shadow: none;
         width: 100%;
         padding-bottom: rem(6);
         color: var(--color-light);
@@ -34,7 +34,7 @@
         }
 
         &:user-invalid {
-            border-bottom-color: red;
+            border-bottom-color: var(--color-error);
         }
 
         &:user-valid {
@@ -61,7 +61,7 @@
         display: inline-flex;
         flex-direction: column;
         row-gap: rem(5);
-        color: red;
+        color: var(--color-error);
         font-size: rem(14);
 
         &:empty {

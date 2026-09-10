@@ -10,8 +10,9 @@ class Header {
         isLock: 'is-lock',
     }
 
-    stateAttributes = {
-        ariaExpanded: 'aria-expanded',
+    menuLabels = {
+        open: 'Open menu',
+        close: 'Close menu',
     }
 
     constructor() {
@@ -36,7 +37,10 @@ class Header {
         document.documentElement.classList.toggle(this.stateClasses.isLock)
 
         const isOpen = this.overlayElement.classList.contains(this.stateClasses.isActive)
-        this.burgerButtonElement.setAttribute(this.stateAttributes.ariaExpanded, isOpen)
+
+        this.burgerButtonElement.ariaExpanded = isOpen
+        this.burgerButtonElement.ariaLabel = isOpen ? this.menuLabels.close : this.menuLabels.open
+        this.burgerButtonElement.title = isOpen ? this.menuLabels.close : this.menuLabels.open
     }
 }
 

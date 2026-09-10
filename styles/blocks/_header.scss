@@ -12,11 +12,21 @@
     animation-timeline: scroll();
     animation-range: 0 rem(100);
 
+    @mixin scroll-header {
+        padding-block: rem(10);
+        box-shadow: 0 0 1rem var(--color-light);
+    }
+
     @keyframes scrolling-header {
         to {
-            padding-block: rem(10);
-            box-shadow: 0 0 1rem var(--color-light);
+            @include scroll-header;
         }
+    }
+
+    @supports (not (animation-timeline: scroll())) {
+        @include scroll-header;
+
+        position: sticky;
     }
 
     &__inner {
@@ -53,6 +63,7 @@
     &__menu {
         @include mobile {
             overflow-y: auto;
+            font-size: 18px;
         }
         &-list {
             display: flex;

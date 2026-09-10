@@ -249,6 +249,7 @@ svg * {
   --color-grey-40: #656567;
   --color-grey-60: #98989A;
   --color-grey-90: #E6E6E6;
+  --color-error: red;
   --font-family-base: 'Barlow', sans-serif;
   --border: 0.0625rem solid var(--color-grey-15);
   --border-radius: 0.625rem;
@@ -366,7 +367,7 @@ a {
   }
 }
 @media (any-hover: none) {
-  a::active {
+  a:active {
     color: var(--color-accent);
   }
 }
@@ -416,7 +417,6 @@ a[aria-label]::after {
   padding: 0 !important;
   white-space: nowrap !important;
   clip-path: inset(100%) !important;
-  clip: rect(0 0 0 0) !important;
   overflow: hidden !important;
 }
 
@@ -448,7 +448,7 @@ a[aria-label]::after {
   }
 }
 @media (any-hover: none) {
-  .burger-button::active .burger-button__line {
+  .burger-button:active .burger-button__line {
     background-color: var(--color-light);
   }
 }
@@ -508,7 +508,7 @@ a[aria-label]::after {
   }
 }
 @media (any-hover: none) {
-  .button::active {
+  .button:active {
     background-color: transparent;
     color: var(--color-accent);
     border-color: var(--color-accent);
@@ -567,6 +567,13 @@ a[aria-label]::after {
     box-shadow: 0 0 1rem var(--color-light);
   }
 }
+@supports not (animation-timeline: scroll()) {
+  .header {
+    padding-block: 0.625rem;
+    box-shadow: 0 0 1rem var(--color-light);
+    position: sticky;
+  }
+}
 .header__inner {
   display: flex;
   justify-content: space-between;
@@ -599,6 +606,7 @@ a[aria-label]::after {
 @media (width <= 47.99875rem) {
   .header__menu {
     overflow-y: auto;
+    font-size: 18px;
   }
 }
 .header__menu-list {
@@ -890,7 +898,7 @@ a[aria-label]::after {
   }
 }
 @media (any-hover: none) {
-  .link::active {
+  .link:active {
     background-color: transparent;
     border-color: var(--color-accent);
   }
@@ -1230,12 +1238,12 @@ a[aria-label]::after {
   }
 }
 @media (any-hover: none) {
-  .faq__accordion::active .faq__accordion-header,
-  .faq__accordion::active .faq__accordion-title {
+  .faq__accordion:active .faq__accordion-header,
+  .faq__accordion:active .faq__accordion-title {
     color: var(--color-accent-70);
   }
-  .faq__accordion::active .faq__accordion-indicator::before,
-  .faq__accordion::active .faq__accordion-indicator::after {
+  .faq__accordion:active .faq__accordion-indicator::before,
+  .faq__accordion:active .faq__accordion-indicator::after {
     background-color: var(--color-accent-70);
   }
 }
@@ -1392,13 +1400,23 @@ a[aria-label]::after {
     background-color: var(--color-grey-15);
   }
 }
-.contacts__link {
+.contacts__address, .contacts__link {
   display: inline-flex;
   column-gap: 0.625rem;
   font-weight: 400;
 }
-.contacts__link svg {
+.contacts__address svg, .contacts__link svg {
   color: var(--color-accent);
+}
+@media (any-hover: hover) {
+  .contacts__link:hover {
+    opacity: 0.7;
+  }
+}
+@media (any-hover: none) {
+  .contacts__link:active {
+    opacity: 0.7;
+  }
 }
 .contacts__tag {
   display: inline-flex;
@@ -1459,7 +1477,7 @@ a[aria-label]::after {
   }
 }
 @media (any-hover: none) {
-  .soc1als__link::active {
+  .soc1als__link:active {
     color: var(--color-light);
   }
 }
@@ -1581,7 +1599,7 @@ a[aria-label]::after {
   }
 }
 @media (any-hover: none) {
-  .range-slider__input::active {
+  .range-slider__input:active {
     opacity: 0.7;
   }
 }
@@ -1642,7 +1660,7 @@ a[aria-label]::after {
   }
 }
 @media (any-hover: none) {
-  .checkbox__wrapper::active {
+  .checkbox__wrapper:active {
     opacity: 0.7;
   }
 }
@@ -1690,7 +1708,7 @@ a[aria-label]::after {
   -webkit-appearance: none;
   appearance: none;
   border-radius: 0;
-  box-shadow: 0;
+  box-shadow: none;
   width: 100%;
   padding-bottom: 0.375rem;
   color: var(--color-light);
@@ -1704,7 +1722,7 @@ a[aria-label]::after {
   }
 }
 @media (any-hover: none) {
-  .field__input::active {
+  .field__input:active {
     border-bottom-color: var(--color-accent);
   }
 }
@@ -1713,7 +1731,7 @@ a[aria-label]::after {
   border-bottom-color: var(--color-accent);
 }
 .field__input:user-invalid {
-  border-bottom-color: red;
+  border-bottom-color: var(--color-error);
 }
 .field__input:user-valid {
   border-bottom-color: var(--color-accent);
@@ -1734,7 +1752,7 @@ a[aria-label]::after {
   display: inline-flex;
   flex-direction: column;
   row-gap: 0.3125rem;
-  color: red;
+  color: var(--color-error);
   font-size: 0.875rem;
 }
 .field__errors:empty {
@@ -1894,7 +1912,7 @@ a[aria-label]::after {
   }
 }
 @media (any-hover: none) {
-  .work-card__link::active {
+  .work-card__link:active {
     opacity: 0.7;
   }
 }
