@@ -1,57 +1,63 @@
 @use '../helpers' as *;
 
 .icon-wrapper {
-    --iconWrapperSize: #{fluid(88, 58)};
+  --iconWrapperSize: #{fluid(88, 58)};
 
-    @include square(var(--iconWrapperSize));
-    @include flex-center;
+  @include square(var(--iconWrapperSize));
+  @include flex-center;
 
-    position: relative;
-    flex-shrink: 0;
-    background: var(--gradient);
-    border-radius: var(--border-radius);
+  position: relative;
+  flex-shrink: 0;
+  background: var(--gradient);
+  border-radius: var(--border-radius);
 
-    &--accent {
-        background: var(--color-accent);
-        border-radius: rem(15);
-        box-shadow: inset 0 0 rem(14) rem(6) rgba(255, 255, 255, 0.5);
-    }
+  &--accent {
+    background: var(--color-accent);
+    border-radius: rem(15);
+    box-shadow: inset 0 0 rem(14) rem(6) rgba(255, 255, 255, 0.5);
+  }
 
-    &__image {
-        --iconImageSize: #{fluid(40, 26)};
+  &__image {
+    --iconImageSize: #{fluid(40, 26)};
 
-        @include square(var(--iconImageSize));
-
-        &--large {
-            --iconImageSize: #{fluid(85, 45)};
-        }
-    }
-
-    &--dark {
-        --iconWrapperSize: #{rem(54)};
-
-        background: var(--color-grey-15);
-
-        @include laptop {
-            --iconWrapperSize: #{rem(46)};
-        }
-
-        svg {
-            @include abs-center;
-
-            color: var(--color-accent);
-        }
-    }
+    @include square(var(--iconImageSize));
 
     &--large {
-        --iconWrapperSize: #{fluid(150, 80)};
+      --iconImageSize: #{fluid(85, 45)};
+    }
+  }
+
+  &--dark {
+    --iconWrapperSize: #{rem(54)};
+
+    background: var(--color-grey-15);
+
+    @include laptop {
+      --iconWrapperSize: #{rem(46)};
     }
 
-    &--medium {
-        --iconWrapperSize: #{rem(64)};
+    svg {
+      @include abs-center;
 
-        @include laptop {
-            --iconWrapperSize: #{rem(52)};
-        }
+      color: var(--color-accent);
     }
+  }
+
+  &--large {
+    --iconWrapperSize: #{fluid(150, 80)};
+  }
+
+  &--medium {
+    --iconWrapperSize: #{rem(64)};
+
+    @include laptop {
+      --iconWrapperSize: #{rem(52)};
+    }
+
+    svg {
+      --iconSvgSize: #{fluid(24, 20)};
+
+      @include square(var(--iconSvgSize));
+    }
+  }
 }

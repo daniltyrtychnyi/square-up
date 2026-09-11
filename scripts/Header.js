@@ -27,10 +27,6 @@ class Header {
         this.bindEvents()
     }
 
-    bindEvents() {
-        this.burgerButtonElement.addEventListener('click', this.onBurgerButtonClick)
-    }
-
     onBurgerButtonClick = () => {
         this.overlayElement.classList.toggle(this.stateClasses.isActive)
         this.burgerButtonElement.classList.toggle(this.stateClasses.isActive)
@@ -41,6 +37,23 @@ class Header {
         this.burgerButtonElement.ariaExpanded = isOpen
         this.burgerButtonElement.ariaLabel = isOpen ? this.menuLabels.close : this.menuLabels.open
         this.burgerButtonElement.title = isOpen ? this.menuLabels.close : this.menuLabels.open
+    }
+
+    onMatchMediaChange = (event) => {
+        if (!event.matches) {
+            this.overlayElement.classList.remove(this.stateClasses.isActive)
+            this.burgerButtonElement.classList.remove(this.stateClasses.isActive)
+            document.documentElement.classList.remove(this.stateClasses.isLock)
+
+            this.burgerButtonElement.ariaExpanded = false
+            this.burgerButtonElement.ariaLabel = this.menuLabels.open
+            this.burgerButtonElement.title = this.menuLabels.open
+        }
+    }
+
+    bindEvents() {
+        this.burgerButtonElement.addEventListener('click', this.onBurgerButtonClick)
+        window.matchMedia('(width <= 767.98px)').addEventListener('change', this.onMatchMediaChange)
     }
 }
 

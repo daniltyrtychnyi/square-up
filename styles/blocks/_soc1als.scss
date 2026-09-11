@@ -9,7 +9,7 @@
     border-radius: rem(12);
 
     &--hidden-border-mobile {
-        @include mobile-s {
+        @include mobile {
             border: none;
         }
     }

@@ -18,6 +18,11 @@ class FormValidation {
 
     constructor() {
         this.formElement = document.querySelector(this.selectors.form)
+
+        if (!this.formElement) {
+            return
+        }
+
         this.submitButtonElement = this.formElement.querySelector(this.selectors.submitButton)
         this.bindEvents()
     }
