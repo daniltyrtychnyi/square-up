@@ -1893,7 +1893,7 @@ a[aria-label]::after {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
   flex-wrap: wrap;
 }
 .work-card__info {

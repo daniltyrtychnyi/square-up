@@ -1,47 +1,42 @@
-# ✅ SquareUp - Digital Agency
+# ✅ SquareUp — Digital Agency
 
 Многостраничный сайт цифрового агентства.
 
 ## 🖼️ Дизайн
 
-Бесплатный макет из Figma.
+За основу интерфейса был взят дизайн из бесплатного макета Figma.
 
-![Превью](./design.png)
+![Превью](./design.jpg)
 
-🔗 [Ссылка на макет в Figma](https://www.figma.com/design/ZVqzCg7YDWDjNqqwHwrJY7/Digital-Agency-Company-Website-UI-Design-Template-in-Dark-Theme---FREE-Editable----Community-?t=RxXj3F4osiKQf5od-0)
+🔗 [Ссылка на макет в Figma](https://www.figma.com/design/gZCvperA9OG1xYfQv7LEKa/Digital-Agency-Company-Website-UI-Design-Template-in-Dark-Theme---FREE-Editable----Community-?node-id=3-53&p=f&t=pUqBGTbWoIJfaOyJ-0)
 
 ## 🛠️ Технологии
 
-- HTML
-- SASS/SCSS
-- JavaScript
-- BEM
-- Accessibility
+- **HTML5**
+- **SCSS**
+- **JavaScript (ES6+)**
+- **BEM**
+- **Accessibility**
 
 ## ✨ Реализовано
 
-### 🍔 Бургер-меню
-Меню с блокировкой скролла при открытии.
-
-### ✅ Валидация формы 
-Кастомная проверка полей ввода на JavaScript с выводом ошибок.
-
-### 🎚️ Диапазонный слайдер
-Двойной ползунок выбора бюджета.
-
-### 🎨 Современный CSS
-- Использованы псевдоклассы `:user-invalid` `:has()`
-- Scroll animation-timeline (шапке добавляется тень при прокрутке)
-- Аккордеоны на `<details>`
-- Резиновая вёрстка
-- `rem` единицы измерения для доступности
+- Многостраничная структура сайта.
+- Адаптивная вёрстка под разные разрешения экрана.
+- Клиентская валидация формы.
+- Диапазонный слайдер выбора бюджета.
 
 ## 🚀 Запуск
 
 1. 🔗 [Открыть сайт](https://daniltyrtychnyi.github.io/square-up/)
 
 2. Клонировать репозиторий:
+
 ```bash
-git clone git@github.com:daniltyrtychnyi/square-up.git
+git clone https://github.com/daniltyrtychnyi/square-up.git
 ```
-3. Открыть `index.html` в браузере.
+
+3. Запустить через локальный сервер — браузеры блокируют загрузку ES-модулей при открытии `index.html` напрямую через `file://`:
+    - **Visual Studio Code** —
+      расширение [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer), правый клик
+      на `index.html` → *Open with Live Server*
+    - **WebStorm** — открывается из коробки: значок браузера в правом верхнем углу редактора
