@@ -35,8 +35,8 @@
 git clone https://github.com/daniltyrtychnyi/square-up.git
 ```
 
-3. Запустить через локальный сервер — браузеры блокируют загрузку ES-модулей при открытии `index.html` напрямую через `file://`:
-    - **Visual Studio Code** —
+3. Запустить проект через локальный сервер:
+    - **Visual Studio Code** — установить
       расширение [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer), правый клик
       на `index.html` → *Open with Live Server*
-    - **WebStorm** — открывается из коробки: значок браузера в правом верхнем углу редактора
+    - **WebStorm** — запустить проект через встроенный локальный сервер
